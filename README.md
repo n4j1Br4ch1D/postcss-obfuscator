@@ -11,7 +11,7 @@ This plugin provides obfuscation capabilities to your CSS files by replacing cla
 
 **keywords:** _postcss, plugin, obfuscation, css, css classes, class renamer, postcss-rename-selectors, class prefixer, Postcss obfuscator, PostCSS obfuscation plugin, CSS obfuscation, Class name scrambling, CSS security, Obfuscate CSS code, Protect CSS code, Prevent CSS reverse-engineering, tailwindcss, tailwindcss classes list, tailwindcss classes array json, bootstrap, bootstrap classes array json, Scramble HTML classes, CSS anti-theft protection, code privacy, CSS code obfuscator, CSS class name encryption, anti web scraping, Anti-scraping tools, Anti-scraping technology, Web scraping prevention, Web crawling protection._
 
-**Check Also:** <a href="https://github.com/n4j1Br4ch1D/postcss-prependr" target="_blank" title="postcss-prepend:prepends a comment to the top of your CSS files">PostCSS-prepend</a>
+**Check Also:** <a href="https://github.com/n4j1Br4ch1D/postcss-prepend" target="_blank" title="postcss-prepend:prepends a comment to the top of your CSS files">PostCSS-prepend</a>
 
 **Turn This into this:**
 
