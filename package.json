@@ -1,0 +1,58 @@
+{
+  "name": "postcss-obfuscator",
+  "version": "1.4.0",
+  "description": "PostCSS plugin that helps you protect your CSS code by obfuscating class names and divs. with customizable configuration.",
+  "main": "index.js",
+  "scripts": {
+    "postcss": "postcss test/demo/src/**/*.css --dir test/demo/build",
+    "postcss:watch": "postcss test/demo/src/**/*.css --dir test/demo/build --watch",
+    "obfuscate": "node test/demo/postcss-obfuscate",
+    "test": "node test/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n4j1Br4ch1D/postcss-obfuscator.git"
+  },
+  "keywords": [
+    "postcss",
+    "plugin",
+    "obfuscation",
+    "css",
+    "css classes",
+    "class renamer",
+    "postcss-rename-selectors",
+    "class prefixer",
+    "Postcss obfuscator",
+    "PostCSS obfuscation plugin",
+    "CSS obfuscation",
+    "Class name scrambling",
+    "CSS security",
+    "Obfuscate CSS code",
+    "Protect CSS code",
+    "Prevent CSS reverse-engineering",
+    "tailwindcss",
+    "tailwindcss classes list",
+    "tailwindcss classes array json",
+    "bootstrap",
+    "bootstrap classes array json",
+    "Scramble HTML classes",
+    "CSS anti-theft protection",
+    "code privacy",
+    "CSS code obfuscator",
+    "CSS class name encryption",
+    "anti web scraping",
+    "Anti-scraping tools",
+    "Anti-scraping technology",
+    "Web scraping prevention",
+    "Web crawling protection"
+  ],
+  "author": "Najib Rachid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues"
+  },
+  "homepage": "https://github.com/n4j1Br4ch1D/postcss-obfuscator#readme",
+  "devDependencies": {
+    "postcss": "^8.4.21"
+  }
+}
