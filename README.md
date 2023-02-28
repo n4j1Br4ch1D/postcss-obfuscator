@@ -16,10 +16,10 @@ This plugin provides obfuscation capabilities to your CSS files by replacing cla
 **Turn This into this:**
 
 <div style="display:flex">
-<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/json-Obfuscation.png" alt="json-Obfuscation" height="400" width="500"/>
-<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/css-Obfuscation.png" alt="css-Obfuscation" height="400" width="500"/>
-<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/html-Obfuscation.png" alt="html-Obfuscation" height="400" width="500"/>
-<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/react-Obfuscation.png" alt="react-Obfuscation" height="400" width="500"/>
+<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/json-obsfuscation.png" alt="json-Obfuscation" height="400" width="500"/>
+<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/css-obsfuscation.png" alt="css-Obfuscation" height="400" width="500"/>
+<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/html-obsfuscation.png" alt="html-Obfuscation" height="400" width="500"/>
+<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/react-obsfuscation.png" alt="react-Obfuscation" height="400" width="500"/>
 </div>
 
 ---
@@ -152,7 +152,7 @@ The plugin has several options that you can configure to customize its behavior.
     formatJson: false, // Format obfuscation data JSON file.
     showConfig: false, // Show config on terminal when runinng.
     keepData: true,  // Keep or delete Data after osbfucation is finished?
-    callBack: function () {console.log("Call Me back! ;)");} // Callback function to call after obfuscation is done.
+    callBack: function () {} // Callback function to call after obfuscation is done.
   };
 
 ```
@@ -194,7 +194,6 @@ enable: isDevMode, // Force Run on Dev Env or when srcPath equals desPath.
   ### Destination Folder:
    Its Better to keep your source files as they are for easy development. Consider specifing another folder for build, if you choose your build directory to be same as source directory you will be replaced and you will loose your orginal files.
 
-  ### Use Indicators?
   ### Use Indicators?
   As mentioned this plugin uses Regex to replace all apperances of classes & ids on files with extension you specify (be it html, cs, js, ...).
 Generally if your classes names are unique and avoids reserved keywords, then you got nothing to worry about, otherwise, we got you covered just use the indicator option
