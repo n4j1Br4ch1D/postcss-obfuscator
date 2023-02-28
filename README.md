@@ -21,7 +21,7 @@ This plugin provides obfuscation capabilities to your CSS files by replacing cla
 <img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/html-obsfuscation.png" alt="html-Obfuscation" height="300" width="400"/>
 <img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/react-obsfuscation.png" alt="react-Obfuscation" height="300" width="400"/>
 </div>
-https://raw.githubusercontent.comment
+
 ---
 
 ## Motivation
