@@ -5,7 +5,7 @@
 
 <img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/postcss-obfuscator.png" alt="postcss-obfuscator cli">
 
-PostCSS plugin that helps you protect your CSS code by obfuscating class names and divs. with customizable configuration.
+PostCSS plugin that helps you protect your CSS code by obfuscating class names and ids. with customizable configuration.
 
 This plugin provides obfuscation capabilities to your CSS files by replacing class and id selectors with prefixed, simplified or randomly generated strings. This can help to protect your CSS code from reverse engineering and unauthorized copying, while also reducing the file size of your CSS files. plugin offers advanced customizable configuration.
 
@@ -34,7 +34,7 @@ This plugin provides obfuscation capabilities to your CSS files by replacing cla
    - [x] Quicker then you think.
    - [X] Postcss plugin, hence its intended to work with any build tool or task runner.
    - [x] Advanced Customizable configuration (Control is yours).
-   - [X] Supports all files: .html, .js, .and, .php, .vue, ... you name it.
+   - [X] Supports all files: .html, .js, .php, .vue, ... you name it.
    - [x] Supports a wide range of CSS frameworks (Tailwidcss, bootstrap, Bulma).
 ## Installation
 

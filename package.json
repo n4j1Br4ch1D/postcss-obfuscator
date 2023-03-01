@@ -1,7 +1,7 @@
 {
   "name": "postcss-obfuscator",
   "version": "1.4.1",
-  "description": "PostCSS plugin that helps you protect your CSS code by obfuscating class names and divs. with customizable configuration.",
+  "description": "PostCSS plugin that helps you protect your CSS code by obfuscating class names and ids. with customizable configuration.",
   "main": "index.js",
   "scripts": {
     "postcss": "postcss test/demo/src/**/*.css --dir test/demo/build",
