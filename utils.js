@@ -182,11 +182,7 @@ function getFileCount(directoryPath, extensions, excludePathsOrFiles = []) {
 function getClassNames(selectorStr) {
   const classes = new Set();
   const escpdSlctrPlchldr = "ESCAPED_SELECTOR_PLACEHOLDER";
-  // const psudoClasses = [":-moz-broken",":-moz-drag-over",":-moz-first-node",":-moz-focusring",":-moz-handler-blocked",":-moz-handler-crashed",":-moz-handler-disabled",":-moz-last-node",":-moz-loading",":-moz-locale-dir",":-moz-locale-dir",":-moz-only-whitespace",":-moz-submit-invalid",":-moz-suppressed",":-moz-user-disabled",":-moz-window-inactive",":active",":any-link",":autofill",":blankExperimental",":checked",":current",":default",":defined",":dir",":disabled",":empty",":enabled",":first",":first-child",":first-of-type",":focus",":focus-visible",":focus-within",":fullscreen",":futureExperimental",":has",":host",":host-context",":host",":hover",":in-range",":indeterminate",":invalid",":is",":lang",":last-child",":last-of-type",":left",":link",":local-link",":modal",":not",":nth-child",":nth-col",":nth-last-child",":nth-last-col",":nth-last-of-type",":nth-of-type",":only-child",":only-of-type",":optional",":out-of-range",":pastExperimental",":paused",":picture-in-picture",":placeholder-shown",":playing",":read-only",":read-write",":required",":right",":root",":scope",":target",":target-withinExperimental",":user-invalid",":-moz-ui-invalid",":user-valid",":-moz-ui-valid",":valid",":visited",":where"];
-
-  // psudoClasses.forEach(pClass => {
-  //   selectorStr = selectorStr.replace(pClass, "");
-  // });
+  const psudoClasses = [":-moz-broken",":-moz-drag-over",":-moz-first-node",":-moz-focusring",":-moz-handler-blocked",":-moz-handler-crashed",":-moz-handler-disabled",":-moz-last-node",":-moz-loading",":-moz-locale-dir",":-moz-locale-dir",":-moz-only-whitespace",":-moz-submit-invalid",":-moz-suppressed",":-moz-user-disabled",":-moz-window-inactive",":active",":any-link",":autofill",":blankExperimental",":checked",":current",":default",":defined",":dir",":disabled",":empty",":enabled",":first",":first-child",":first-of-type",":focus",":focus-visible",":focus-within",":fullscreen",":futureExperimental",":has",":host",":host-context",":host",":hover",":in-range",":indeterminate",":invalid",":is",":lang",":last-child",":last-of-type",":left",":link",":local-link",":modal",":not",":nth-child",":nth-col",":nth-last-child",":nth-last-col",":nth-last-of-type",":nth-of-type",":only-child",":only-of-type",":optional",":out-of-range",":pastExperimental",":paused",":picture-in-picture",":placeholder-shown",":playing",":read-only",":read-write",":required",":right",":root",":scope",":target",":target-withinExperimental",":user-invalid",":-moz-ui-invalid",":user-valid",":-moz-ui-valid",":valid",":visited",":where"];
 
   const tempClasses = selectorStr
     .replace(/\.(?=[0-9-])/g, escpdSlctrPlchldr) // Match escaped dot
@@ -202,14 +198,21 @@ function getClassNames(selectorStr) {
     let theClass = tempClass
       .trim()
       .split(" ")[0]
-      .replace()
-      .replace(/:[^:]*$/, "") // Match last String thats prcedded by colon but tailwindcss issue
       .replace(escpdSlctrPlchldr, "\\.")
       .replace(":", "\\:")
       .replace("/", "\\/")
       .replace(".#", ".\\#")
       .replace("-.", ".\\-");
-      classes.add(theClass);
+      
+    let lastColonIndex = theClass.lastIndexOf(':');
+    if (lastColonIndex !== -1) {
+      let lastString = theClass.substring(lastColonIndex + 1);
+      if (psudoClasses.includes(":"+lastString)) {
+        theClass = theClass.substring(0, lastColonIndex);
+        theClass = theClass.replace("\\", "")
+      }
+    }
+    classes.add(theClass);
   });
 
   return classes;

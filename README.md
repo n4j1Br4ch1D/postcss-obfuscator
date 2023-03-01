@@ -1,17 +1,17 @@
 <a href="#Intro" title="Section Intro">Intro</a>➤<a href="#Motivation" title="Section Motivation">Motivation</a>➤<a href="#Features" title="Section Features">Features</a>➤<a href="#Installation" title="Section Installation">Installation</a>➤<a href="#Usage" title="Section Usage">Usage</a>➤<a href="#Configuration" title="Section Configuration">Configuration</a>➤<a href="#Extras" title="Section Extra">Extra</a>➤<a href="#Releases" title="Section Releases">Releases</a>➤<a href="#Contributing" title="Section Contributing">Contributing</a>
 # :space_invader: PostCSS Obfuscator
-- :date:**19-22-2023** :pushpin:**Beta Version 1.4.0**
+- :date:**01-03-2023** :pushpin:**Beta Version 1.4.1**
 - :computer:<a href="https://github.com/n4j1Br4ch1D" target="_blank" title="NajibRachid: Agile full-stack developer">NajibRachid</a> :purple_circle:<a href="https://anmoonweb.com/?ref=postcss-obfuscator" target="_blank" title="ANMOON: Right talents at the right place ">ANMOON</a> :office: <a href="https://x-hub.io/?ref=anmoon-postcss-obfuscator" target="_blank" title="XHUB: For Developers By Developers">XHUB</a>
 
 <img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/postcss-obfuscator.png" alt="postcss-obfuscator cli">
 
 PostCSS plugin that helps you protect your CSS code by obfuscating class names and divs. with customizable configuration.
 
-This plugin provides obfuscation capabilities to your CSS files by replacing class and id selectors with prefixed, simpliied or randomly generated strings. This can help to protect your CSS code from reverse engineering and unauthorized copying, while also reducing the file size of your CSS files. plugin offers advanced customizable configuration.
+This plugin provides obfuscation capabilities to your CSS files by replacing class and id selectors with prefixed, simplified or randomly generated strings. This can help to protect your CSS code from reverse engineering and unauthorized copying, while also reducing the file size of your CSS files. plugin offers advanced customizable configuration.
 
 **keywords:** _postcss, plugin, obfuscation, css, css classes, class renamer, postcss-rename-selectors, class prefixer, Postcss obfuscator, PostCSS obfuscation plugin, CSS obfuscation, Class name scrambling, CSS security, Obfuscate CSS code, Protect CSS code, Prevent CSS reverse-engineering, tailwindcss, tailwindcss classes list, tailwindcss classes array json, bootstrap, bootstrap classes array json, Scramble HTML classes, CSS anti-theft protection, code privacy, CSS code obfuscator, CSS class name encryption, anti web scraping, Anti-scraping tools, Anti-scraping technology, Web scraping prevention, Web crawling protection._
 
-**Check Also:** <a href="https://github.com/n4j1Br4ch1D/postcss-prepend" target="_blank" title="postcss-prepend:prepends a comment to the top of your CSS files">PostCSS-prepend</a>
+**Check Also:** <a href="https://github.com/n4j1Br4ch1D/postcss-prepend" target="_blank" title="postcss-prepend:prepends a comment to the top of your CSS files">PostCSS-prepend</a> | <a href="https://github.com/n4j1Br4ch1D/postcss-mobile-first" target="_blank" title="postcss-mobile-first:converts your desktop-first CSS code to mobile-first CSS code.">PostCSS-mobile-first</a>
 
 **Turn This into this:**
 
@@ -169,13 +169,13 @@ Then npm scripts can be something like this:
    
   ### How it Works Basicly?
   1. Loop over all css files.
-  2. Uses Buildting fucntion(regex) to find classes & ids.
+  2. Uses Buildting function(regex) to find classes & ids.
   3. Saves Ids & classes in a Json file key represting orginal Names. then genarates  random names as values.
   4. Creates new folder from source folder.
   5. Loops throw files and replaces those keys with values from JSON File.
 
   ### Caveats?
-  - Only CSS Supported so call the extension After your code was converted to css (Example: scss to css). Its genarlly better to call at as the last plugin.
+  - Only CSS Supported so call the extension After your code was converted to css (Example: scss to css). Its generally better to call at as the last plugin.
   - One of  best practices is to avoid naming your ids & classes reserved words like html elemnts name or attributes. (same for JS & CSS).
   - It uses builting function to find divs & css classes. so it may not work perfectly with advanced CSS selectors.
  - I advice to keepData as deafult true and to use a diffrent build directory: using same directory will replace your files and you may loose orginal classes and ids names. you will get a warning for that. 
@@ -278,9 +278,17 @@ Now whenever you mention your ids or classes use like this: so it will only repl
   - Beta Version 1.4.0 : 28/02/2023
     - Improve Exclude Css Option allow Paths.
     - Improve Exclude HTML Option allow Paths.
-  - [Agenda] Beta Version 1.4.1 : 01/03/2023
+  - Beta Version 1.4.1 : 01/03/2023
     -Fix Error copying directory: Invalid regular expression: /(?<!</?)\b(sm\:group-hover\)\b(?!=)/: Unterminated
 group 
+  - [Agenda] Beta Version 1.x.x : xx/XX/2023
+    - Fine tuning for tailwindcss.
+    - Fix Files Path (make relative).
+    - Set Indicators Start & End.
+    - Add Force option (case: dev env or same Path).
+    - Ask before preceding (If dev env or srcPath is desPath).
+    - Improve custome script(postcss-obsfucator).
+    - Refactor tests.
 
 ```
 
