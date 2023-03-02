@@ -49,13 +49,13 @@ yarn add postcss-obfuscator --dev
 ```
 
 ## Usage
-First, you need to add postcss-obfuscate to your PostCSS configuration. For example, if you're using postcss-cli, you can add it to your postcss.config.js file:
+First, you need to add postcss-obfuscator to your PostCSS configuration. For example, if you're using postcss-cli, you can add it to your postcss.config.js file:
 
 ```js
 //postcss.config.js 
 module.exports = {
   plugins: [
-    require('postcss-obfuscate')({
+    require('postcss-obfuscator')({
       /* options */
     })
   ]
@@ -112,7 +112,7 @@ The plugin has several options that you can configure to customize its behavior.
   - **jsonsPath:** Path and Name where to save obfuscation data __default is: css-obsucator.__
   - **srcPath:** Path for your source files, __default is: src.__
   - **desPath:**  Destination Path for obfuscated html/js/.. files, __default is: out__.
-  - **extensions:** Extesnions Array of files you want osbfucated ['.html', '.php', '.js', '.svelte'], __default is none.__
+  - **extensions:** Extesnions Array of files you want osbfucated ['.html', '.php', '.js', '.svelte'], __default is '.html'.__
   - **htmlExcludes:** Files and paths to exclude from html obfuscation replacement, __default is none.__
   - **cssExcludes:** Files and paths to exclude from css obfuscation, __default is none.__
   - **fresh:** Create New obfuscation data List or use already existed one (to keep Production Cache or prevent data scrapping). __deafult is false.__
@@ -143,7 +143,7 @@ The plugin has several options that you can configure to customize its behavior.
     jsonsPath: "css-obsucator", // Path and Name where to save obfuscation data.
     srcPath: "src", // Source of your files.
     desPath: "out", // Destination for obfuscated html/js/.. files.
-    extensions: [], // Extesnion of files you want osbfucated ['.html', '.php', '.js', '.svelte'].
+    extensions: ['.html'], // Extesnion of files you want osbfucated ['.html', '.php', '.js', '.svelte'].
     htmlExcludes: [], // Files and paths to exclude from html obfuscation replacement.
     cssExcludes: [], // Files and paths to exclude from css obfuscation.
     fresh: false, // Create New obfuscation data List or use AlreadyExistedOne (to keep Production Cache or prevent data scrapping).
@@ -279,9 +279,11 @@ Now whenever you mention your ids or classes use like this: so it will only repl
     - Improve Exclude Css Option allow Paths.
     - Improve Exclude HTML Option allow Paths.
   - Beta Version 1.4.1 : 01/03/2023
-    -Fix Error copying directory: Invalid regular expression: /(?<!</?)\b(sm\:group-hover\)\b(?!=)/: Unterminated
+    - Fix Error copying directory: Invalid regular expression: /(?<!</?)\b(sm\:group-hover\)\b(?!=)/: Unterminated
 group 
-  - [Agenda] Beta Version 1.x.x : xx/XX/2023
+  - Beta Version 1.4.2 : 02/03/2023
+     - Fix default replacement set default extensions to ['.html'].
+  - [Agenda] Beta Version 1.x.x : xx/xx/2023
     - Fine tuning for tailwindcss.
     - Fix Files Path (make relative).
     - Set Indicators Start & End.
