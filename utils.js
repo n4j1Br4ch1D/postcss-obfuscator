@@ -98,11 +98,12 @@ function replaceJsonKeysInFiles(
       // Replace JSON keys in the file
       let fileContent = fs.readFileSync(filePath, "utf-8");
       Object.keys(jsonData).forEach((key) => {
+        let keyUse = key.slice(1).replace(/\\/g, "");
         let regex;
         if (indicator) {
-          regex = new RegExp(`${indicator}${key.slice(1)}${indicator}`, "g"); // find using indicator
+          regex = new RegExp(`${indicator}${keyUse}${indicator}`, "g"); // find using indicator
         } else {
-          regex = new RegExp(`(?<!<\/?)\\b(${key.slice(1)})\\b(?!=)`, "g"); // avoid html tagnames & attributes
+          regex = new RegExp(`(?<!<\/?)\\b(${keyUse})(?![./\\-_:,={aA-zZ}\\d])`, "g"); // avoid html tagnames & attributes also match exact wording
         }
         fileContent = fileContent.replace(regex, jsonData[key].slice(1));
       });
@@ -189,8 +190,6 @@ function getClassNames(selectorStr) {
     .replace("::", " ")
     .replace(/\([^\)]*\)/g, "") // Remove string between starts with ( end with )
     .replace(/\[[^\]]*\]/g, "") // Remove string between starts with [ end with ]
-    .replace("\\.", escpdSlctrPlchldr)
-    .replace("\\", "")
     .split(".")
     .slice(1);
 
@@ -198,18 +197,17 @@ function getClassNames(selectorStr) {
     let theClass = tempClass
       .trim()
       .split(" ")[0]
-      .replace(escpdSlctrPlchldr, "\\.")
+      .replace(escpdSlctrPlchldr, "\.")
       .replace(":", "\\:")
       .replace("/", "\\/")
       .replace(".#", ".\\#")
       .replace("-.", ".\\-");
-      
     let lastColonIndex = theClass.lastIndexOf(':');
     if (lastColonIndex !== -1) {
       let lastString = theClass.substring(lastColonIndex + 1);
       if (psudoClasses.includes(":"+lastString)) {
         theClass = theClass.substring(0, lastColonIndex);
-        theClass = theClass.replace("\\", "")
+        theClass = theClass.replace(/\\$/, "");
       }
     }
     classes.add(theClass);

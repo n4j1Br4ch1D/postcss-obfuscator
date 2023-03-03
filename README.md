@@ -1,6 +1,6 @@
 <a href="#Intro" title="Section Intro">Intro</a>➤<a href="#Motivation" title="Section Motivation">Motivation</a>➤<a href="#Features" title="Section Features">Features</a>➤<a href="#Installation" title="Section Installation">Installation</a>➤<a href="#Usage" title="Section Usage">Usage</a>➤<a href="#Configuration" title="Section Configuration">Configuration</a>➤<a href="#Extras" title="Section Extra">Extra</a>➤<a href="#Releases" title="Section Releases">Releases</a>➤<a href="#Contributing" title="Section Contributing">Contributing</a>
 # :space_invader: PostCSS Obfuscator
-- :date:**02-03-2023** :pushpin:**Beta Version 1.4.2**
+- :date:**03-03-2023** :pushpin:**Beta Version 1.4.5**
 - :computer:<a href="https://github.com/n4j1Br4ch1D" target="_blank" title="NajibRachid: Agile full-stack developer">NajibRachid</a> :purple_circle:<a href="https://anmoonweb.com/?ref=postcss-obfuscator" target="_blank" title="ANMOON: Right talents at the right place ">ANMOON</a> :office: <a href="https://x-hub.io/?ref=anmoon-postcss-obfuscator" target="_blank" title="XHUB: For Developers By Developers">XHUB</a>
 
 <img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/postcss-obfuscator.png" alt="postcss-obfuscator cli">
@@ -13,7 +13,7 @@ This plugin provides obfuscation capabilities to your CSS files by replacing cla
 
 **Check Also:** <a href="https://github.com/n4j1Br4ch1D/postcss-prepend" target="_blank" title="postcss-prepend:prepends a comment to the top of your CSS files">PostCSS-prepend</a> | <a href="https://github.com/n4j1Br4ch1D/postcss-mobile-first" target="_blank" title="postcss-mobile-first:converts your desktop-first CSS code to mobile-first CSS code.">PostCSS-mobile-first</a>
 
-**Turn This into this:**
+**Turn this into this:**
 
 <div style="display:flex">
 <img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/json-obsfuscation.png" alt="json-Obfuscation" height="300" width="400"/>
@@ -25,7 +25,7 @@ This plugin provides obfuscation capabilities to your CSS files by replacing cla
 ---
 
 ## Motivation
-- Protecting Intellectual Property, Licensing and Distribution: make it hard for others from stealing it or using it without your permission.
+- Protecting Intellectual Property, Licensing and Distribution: make it hard for others from stealing your design or using it without your permission.
 - Protect against Web scraping, data mining or any malicious activities like stealing data or content: make it hard extracting data from websites automatically using software tools, which use class names & ids.
 - Minfiy Your code even more: obsfucation/uglify can slightly reduce file size and improve its performance. 
 
@@ -223,7 +223,7 @@ Now whenever you mention your ids or classes use like this: so it will only repl
 ## Releases
 
 ```txt
- - Initial Version 1.0.0 : 18/02/2023
+  - Initial Version 1.0.0 : 18/02/2023
     - Project Setup.
     - Theory & prove of concept.
   - Initial Version 1.0.3 : 19/02/2023
@@ -283,6 +283,10 @@ Now whenever you mention your ids or classes use like this: so it will only repl
 group 
   - Beta Version 1.4.2 : 02/03/2023
      - Fix default replacement set default extensions to ['.html'].
+  - Beta Version 1.4.5 : 03/03/2023
+     - Fix tailwindcss replacement in html (remove backslash escape character before replace).
+     - Fix tailwindcss css replacement. (remove dplicated escape charecter before dot "0.5").
+     - Fix HTML Exact Match: e.g. (xl:bottom-0 and xl:bottom-0.5).
   - [Agenda] Beta Version 1.x.x : xx/xx/2023
     - Fine tuning for tailwindcss.
     - Fix Files Path (make relative).
@@ -290,6 +294,7 @@ group
     - Add Force option (case: dev env or same Path).
     - Ask before preceding (If dev env or srcPath is desPath).
     - Improve custome script(postcss-obsfucator).
+    - Internal Css feature.
     - Refactor tests.
 
 ```

@@ -23,7 +23,7 @@ const options = {
   extensions: ['.html', '.htm'], // Extesnion of files you want osbfucated ['.html', '.php', '.js', '.svelte']
   htmlExcludes: ['404.html'], // Files and paths to exclude from html obfuscation replacement
   cssExcludes: ['test\\demo\\src\\css\\exclude.css', 'test\\demo\\src\\css\\top\\'], // Files and paths to exclude from css obfuscation
-  fresh: true, // Create New obfuscation data List or use AlreadyExistedOne (to keep Production Cache or prevent data scrapping).
+  fresh: false, // Create New obfuscation data List or use AlreadyExistedOne (to keep Production Cache or prevent data scrapping).
   multi: false, // Generate obsfucated data file for each css file.
   differMulti: false, // Generate differnt Raandom names for each file.
   formatJson: true, // Format obfuscation data JSON file.

@@ -12,6 +12,7 @@
 test/demo/build
 test/demo/out
 test/demo/css-obsucator
+test/demo/src/css/output.css
 
 # misc
 .DS_Store
