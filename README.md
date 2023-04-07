@@ -216,7 +216,8 @@ Now whenever you mention your ids or classes use like this: so it will only repl
    - Bulma
   
   ### How To Use  With?
-    
+    #### HTML/CSS
+    #### ASTRO/Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/1" title="postcss-obfuscator">ASTRO/Tailwindcss.</a>
     #### laravel
     #### react/nextjs
 
