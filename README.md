@@ -209,6 +209,22 @@ Now whenever you mention your ids or classes use like this: so it will only repl
 </script>
 <div class="@myClass@">MyClass</div>
 ```
+
+  ### Build Static and make production ready?
+ Postcss usually is runned automatically on `dev` and `build`: so its preferred to create a customer postcss script with the postcss-obfuscator
+plugin, a script to run only when you want to obfuscate and to make project ready for production.
+
+But it can also be done like this:
+   1. the `enable` option: to enable it only in specific mode and to make sure tailwindcsss works fine in dev mode:
+```js
+process.env.NODE_ENV = "development" //development //obfuscation //production
+const isObfscMode = process.env.NODE_ENV === 'obfuscation'; 
+
+//enable: isObfscMode,
+```
+   2. the `callBack` option, a Callback function to call after obfuscation is done. that way once obfuscation is done you can config and prepare your project for production:
+so basically you use `callBack` option to set the env mode back to `production` so that obsfucation will not run, and then config your app source folder to use `out` folder instead of `src` for production. 
+
   ### Support for css Framworks?
 - In Beta Tests so far it working fine but we always working on improvements.
    - Tailwindcss: few issues are to be fixed very soon.
