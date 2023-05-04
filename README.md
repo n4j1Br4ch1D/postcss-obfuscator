@@ -215,11 +215,12 @@ Now whenever you mention your ids or classes use like this: so it will only repl
    - Bootstrap
    - Bulma
   
-  ### How To Use  With?
-    #### HTML/CSS
-    #### ASTRO/Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/1" title="postcss-obfuscator">ASTRO/Tailwindcss.</a>
-    #### laravel
-    #### react/nextjs
+## How To Use  With?
+  #### HTML/CSS
+  #### ASTRO/Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/1" title="postcss-obfuscator">ASTRO/Tailwindcss.</a>
+  #### React/Vite/Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/2" title="postcss-obfuscator">React/Vite/Tailwindcss.</a>
+  #### laravel
+  #### react/nextjs
 
 ## Releases
 
