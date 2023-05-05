@@ -4,10 +4,10 @@
   "description": "PostCSS plugin that helps you protect your CSS code by obfuscating class names and ids. with customizable configuration.",
   "main": "index.js",
   "scripts": {
-    "postcss": "postcss test/demo/src/**/*.css --dir test/demo/build",
+    "tailwindcss": "cd test/demo && npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch",
+    "postcss": "postcss test/demo/src/**/*.css --dir test/demo/out/css",
     "postcss:watch": "postcss test/demo/src/**/*.css --dir test/demo/build --watch",
     "obfuscate": "node test/demo/postcss-obfuscate",
-    "tailwindcss": "cd test/demo && npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch",
     "test": "node test/test"
   },
   "repository": {
@@ -54,7 +54,8 @@
   },
   "homepage": "https://github.com/n4j1Br4ch1D/postcss-obfuscator#readme",
   "devDependencies": {
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.23",
+    "postcss-cli": "^10.1.0",
     "tailwindcss": "^3.2.7"
   }
 }
