@@ -232,9 +232,10 @@ so basically you use `callBack` option to set the env mode back to `production` 
 
   ### Support for css Framworks?
 - In Beta Tests so far it working fine but we always working on improvements.
-   - Tailwindcss: few issues are to be fixed very soon.
-   - Bootstrap
-   - Bulma
+   - Tailwindcss.
+   - Bootstrap.
+   - Bulma.
+   - And any other framwork you can think of.
   
 ## How To Use  With?
   #### HTML/CSS
@@ -311,12 +312,15 @@ group
      - Fix tailwindcss css replacement. (remove dplicated escape charecter before dot "0.5").
      - Fix HTML Exact Match: e.g. (xl:bottom-0 and xl:bottom-0.5).
   - [Agenda] Beta Version 1.x.x : xx/xx/2023
-    - Fine tuning for tailwindcss.
-    - Fix Files Path (make relative).
+    - Better Documentation(use cases).
+    - Better Documentation(build & production).
+    - Fine tuning for tailwindcss (#3 Using tailwindcss arbitrary values).
+    - Typo folder name css-obfuscator.
     - Set Indicators Start & End.
+    - Fix Files Path (make relative).
     - Add Force option (case: dev env or same Path).
     - Ask before preceding (If dev env or srcPath is desPath).
-    - Improve custome script(postcss-obsfucator).
+    - Improve custome script(postcss-obfuscator).
     - Internal Css feature.
     - Refactor tests.
 
