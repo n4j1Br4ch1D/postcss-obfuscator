@@ -189,7 +189,7 @@ function getClassNames(selectorStr) {
     .replace(/\.(?=[0-9-])/g, escpdSlctrPlchldr) // Match escaped dot
     .replace("::", " ")
     .replace(/\([^\)]*\)/g, "") // Remove string between starts with ( end with )
-    .replace(/\[[^\]]*\]/g, "") // Remove string between starts with [ end with ]
+    .replace(/(?<!-)\\\[[^\\\]]*\\\]/g, "")  // remove string starts with [ no(-[ "fix tailwindcss arbitrary values") end with ] as css [attribute*=value] Selector
     .split(".")
     .slice(1);
 
@@ -198,7 +198,6 @@ function getClassNames(selectorStr) {
       .trim()
       .split(" ")[0]
       .replace(escpdSlctrPlchldr, "\.")
-      .replace(":", "\\:")
       .replace("/", "\\/")
       .replace(".#", ".\\#")
       .replace("-.", ".\\-");
