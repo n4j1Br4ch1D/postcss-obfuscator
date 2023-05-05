@@ -223,6 +223,11 @@ const isObfscMode = process.env.NODE_ENV === 'obfuscation';
 //enable: isObfscMode,
 ```
    2. the `callBack` option, a Callback function to call after obfuscation is done. that way once obfuscation is done you can config and prepare your project for production:
+```js
+ callBack: function () {
+	process.env.NODE_ENV = "production"; // to make sure postcss-obfuscator doesnt re-run.
+ },
+```
 so basically you use `callBack` option to set the env mode back to `production` so that obsfucation will not run, and then config your app source folder to use `out` folder instead of `src` for production. 
 
   ### Support for css Framworks?
