@@ -109,7 +109,7 @@ The plugin has several options that you can configure to customize its behavior.
   - **idSuffix:** Suffix for id names, __default is nothig.__
   - **idIgnore:** Array of ids to ignore from obfuscation. __deafult is none.__
   - **indicator:** Indicator used to replace names. __default is none.__
-  - **jsonsPath:** Path and Name where to save obfuscation data __default is: css-obsucator.__
+  - **jsonsPath:** Path and Name where to save obfuscation data __default is: css-obfuscator.__
   - **srcPath:** Path for your source files, __default is: src.__
   - **desPath:**  Destination Path for obfuscated html/js/.. files, __default is: out__.
   - **extensions:** Extesnions Array of files you want osbfucated ['.html', '.php', '.js', '.svelte'], __default is '.html'.__
@@ -140,7 +140,7 @@ The plugin has several options that you can configure to customize its behavior.
     idSuffix: "", // idName suffix.
     idIgnore: [], // Ids to ignore from obfuscation.
     indicator: null, // Indicator used to replace names.
-    jsonsPath: "css-obsucator", // Path and Name where to save obfuscation data.
+    jsonsPath: "css-obfuscator", // Path and Name where to save obfuscation data.
     srcPath: "src", // Source of your files.
     desPath: "out", // Destination for obfuscated html/js/.. files.
     extensions: ['.html'], // Extesnion of files you want osbfucated ['.html', '.php', '.js', '.svelte'].

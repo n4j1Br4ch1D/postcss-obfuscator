@@ -17,7 +17,7 @@ const options = {
   idSuffix: "-i", // idName suffix
   idIgnore: [], // Ids to ignore from obfuscation
   indicator: null, // Indicator used to replace names.
-  jsonsPath: "test\\demo\\css-obsucator", // Path and Name where to save obfuscation data.
+  jsonsPath: "test\\demo\\css-obfuscator", // Path and Name where to save obfuscation data.
   srcPath: "test\\demo\\src", // Source of your files.
   desPath: "test\\demo\\out", // Destination for obfuscated html/js/.. files.
   extensions: ['.html', '.htm'], // Extesnion of files you want osbfucated ['.html', '.php', '.js', '.svelte']
