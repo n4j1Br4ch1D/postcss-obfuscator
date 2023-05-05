@@ -1,6 +1,6 @@
 <a href="#Intro" title="Section Intro">Intro</a>➤<a href="#Motivation" title="Section Motivation">Motivation</a>➤<a href="#Features" title="Section Features">Features</a>➤<a href="#Installation" title="Section Installation">Installation</a>➤<a href="#Usage" title="Section Usage">Usage</a>➤<a href="#Configuration" title="Section Configuration">Configuration</a>➤<a href="#Extras" title="Section Extra">Extra</a>➤<a href="#Releases" title="Section Releases">Releases</a>➤<a href="#Contributing" title="Section Contributing">Contributing</a>
 # :space_invader: PostCSS Obfuscator
-- :date:**03-03-2023** :pushpin:**Beta Version 1.4.5**
+- :date:**05-05-2023** :pushpin:**Beta Version 1.5.0**
 - :computer:<a href="https://github.com/n4j1Br4ch1D" target="_blank" title="NajibRachid: Agile full-stack developer">NajibRachid</a> :purple_circle:<a href="https://anmoonweb.com/?ref=postcss-obfuscator" target="_blank" title="ANMOON: Right talents at the right place ">ANMOON</a> :office: <a href="https://x-hub.io/?ref=anmoon-postcss-obfuscator" target="_blank" title="XHUB: For Developers By Developers">XHUB</a>
 
 <img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/postcss-obfuscator.png" alt="postcss-obfuscator cli">
@@ -237,7 +237,7 @@ so basically you use `callBack` option to set the env mode back to `production` 
    - Bulma.
    - And any other framwork you can think of.
   
-## How To Use  With?
+## How To Use With?
   #### HTML/CSS
   #### ASTRO/Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/1" title="postcss-obfuscator">ASTRO/Tailwindcss.</a>
   #### React/Vite/Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/2" title="postcss-obfuscator">React/Vite/Tailwindcss.</a>
@@ -311,11 +311,13 @@ group
      - Fix tailwindcss replacement in html (remove backslash escape character before replace).
      - Fix tailwindcss css replacement. (remove dplicated escape charecter before dot "0.5").
      - Fix HTML Exact Match: e.g. (xl:bottom-0 and xl:bottom-0.5).
-  - [Agenda] Beta Version 1.x.x : xx/xx/2023
+  - Beta Version 1.5.0 : 05/05/2023
     - Better Documentation(use cases).
     - Better Documentation(build & production).
     - Fine tuning for tailwindcss (#3 Using tailwindcss arbitrary values).
     - Typo folder name css-obfuscator.
+  - [Agenda] Beta Version 1.x.x : xx/xx/2023
+    - Draft for framework option.
     - Set Indicators Start & End.
     - Fix Files Path (make relative).
     - Add Force option (case: dev env or same Path).
