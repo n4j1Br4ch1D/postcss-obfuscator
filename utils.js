@@ -198,7 +198,6 @@ function getClassNames(selectorStr) {
       .trim()
       .split(" ")[0]
       .replace(escpdSlctrPlchldr, "\.")
-      .replace("/", "\\/")
       .replace(".#", ".\\#")
       .replace("-.", ".\\-");
     let lastColonIndex = theClass.lastIndexOf(':');
