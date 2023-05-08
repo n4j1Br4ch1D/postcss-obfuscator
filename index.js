@@ -35,7 +35,7 @@ const defaultOptions = {
   indicator: null, // Indicator used to replace names.
   jsonsPath: "css-obfuscator", // Path and Name where to save obfuscation data.
   srcPath: "src", // Source of your files.
-  desPath: "out", // Destination for obfuscated html/js/.. files.
+  desPath: "out", // Destination for obfuscated html/js/.. files. Be careful using the same directory as your src(you will lose your original files).
   extensions: ['.html'], // Extesnion of files you want osbfucated ['.html', '.php', '.js', '.svelte'].
   htmlExcludes: [], // Files and paths to exclude from html obfuscation replacement.
   cssExcludes: [], // Files and paths to exclude from css obfuscation.
