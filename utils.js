@@ -105,7 +105,7 @@ function replaceJsonKeysInFiles(
         } else {
           regex = new RegExp(`(?<!<\/?)\\b(${keyUse})(?![./\\-_:,={aA-zZ}\\d])`, "g"); // avoid html tagnames & attributes also match exact wording
         }
-        fileContent = fileContent.replace(regex, jsonData[key].slice(1));
+        fileContent = fileContent.replace(regex, jsonData[key].slice(1).replace(/\\/g, ""));
       });
       fs.writeFileSync(filePath, fileContent);
     }
