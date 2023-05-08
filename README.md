@@ -3,19 +3,14 @@
 - :date:**05-05-2023** :pushpin:**Beta Version 1.5.0**
 - :computer:<a href="https://github.com/n4j1Br4ch1D" target="_blank" title="NajibRachid: Agile full-stack developer">NajibRachid</a> :purple_circle:<a href="https://anmoonweb.com/?ref=postcss-obfuscator" target="_blank" title="ANMOON: Right talents at the right place ">ANMOON</a> :office: <a href="https://x-hub.io/?ref=anmoon-postcss-obfuscator" target="_blank" title="XHUB: For Developers By Developers">XHUB</a>
 
-<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/postcss-obfuscator.png" alt="postcss-obfuscator cli">
-
 PostCSS plugin that helps you protect your CSS code by obfuscating class names and ids. with customizable configuration.
 
 This plugin provides obfuscation capabilities to your CSS files by replacing class and id selectors with prefixed, simplified or randomly generated strings. This can help to protect your CSS code from reverse engineering and unauthorized copying, while also reducing the file size of your CSS files. plugin offers advanced customizable configuration.
 
-**keywords:** _postcss, plugin, obfuscation, css, css classes, class renamer, postcss-rename-selectors, class prefixer, Postcss obfuscator, PostCSS obfuscation plugin, CSS obfuscation, Class name scrambling, CSS security, Obfuscate CSS code, Protect CSS code, Prevent CSS reverse-engineering, tailwindcss, tailwindcss classes list, tailwindcss classes array json, bootstrap, bootstrap classes array json, Scramble HTML classes, CSS anti-theft protection, code privacy, CSS code obfuscator, CSS class name encryption, anti web scraping, Anti-scraping tools, Anti-scraping technology, Web scraping prevention, Web crawling protection._
-
-**Check Also:** <a href="https://github.com/n4j1Br4ch1D/postcss-prepend" target="_blank" title="postcss-prepend:prepends a comment to the top of your CSS files">PostCSS-prepend</a> | <a href="https://github.com/n4j1Br4ch1D/postcss-mobile-first" target="_blank" title="postcss-mobile-first:converts your desktop-first CSS code to mobile-first CSS code.">PostCSS-mobile-first</a>
-
 **Turn this into this:**
 
 <div style="display:flex">
+<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/postcss-obfuscator.png" alt="postcss-obfuscator cli" height="300" width="400">
 <img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/json-obsfuscation.png" alt="json-Obfuscation" height="300" width="400"/>
 <img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/css-obsfuscation.png" alt="css-Obfuscation" height="300" width="400"/>
 <img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/html-obsfuscation.png" alt="html-Obfuscation" height="300" width="400"/>
@@ -341,3 +336,7 @@ Tests included:
 ### License
 
 This project is licensed under the MIT License. See the LICENSE file for more information. Feel free to use it in your own projects, or contribute to its development on GitHub.
+
+**Check Also:** <a href="https://github.com/n4j1Br4ch1D/postcss-prepend" target="_blank" title="postcss-prepend:prepends a comment to the top of your CSS files">PostCSS-prepend</a> | <a href="https://github.com/n4j1Br4ch1D/postcss-mobile-first" target="_blank" title="postcss-mobile-first:converts your desktop-first CSS code to mobile-first CSS code.">PostCSS-mobile-first</a>
+
+**keywords:** _postcss, plugin, obfuscation, css, css classes, class renamer, postcss-rename-selectors, class prefixer, Postcss obfuscator, PostCSS obfuscation plugin, CSS obfuscation, Class name scrambling, CSS security, Obfuscate CSS code, Protect CSS code, Prevent CSS reverse-engineering, tailwindcss, tailwindcss classes list, tailwindcss classes array json, bootstrap, bootstrap classes array json, Scramble HTML classes, CSS anti-theft protection, code privacy, CSS code obfuscator, CSS class name encryption, anti web scraping, Anti-scraping tools, Anti-scraping technology, Web scraping prevention, Web crawling protection._
