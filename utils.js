@@ -98,7 +98,7 @@ function replaceJsonKeysInFiles(
       // Replace JSON keys in the file
       let fileContent = fs.readFileSync(filePath, "utf-8");
       Object.keys(jsonData).forEach((key) => {
-        let keyUse = key.slice(1).replace(/\\/g, "");
+        let keyUse = escapeRegExp(key.slice(1).replace(/\\/g, ""));
         let regex;
         if (indicator) {
           regex = new RegExp(`${indicator}${keyUse}${indicator}`, "g"); // find using indicator
@@ -276,6 +276,10 @@ function isFileOrInDirectory(paths, filePath) {
   }
 
   return false;
+}
+
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
 }
 
 module.exports = {
