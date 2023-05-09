@@ -4,7 +4,7 @@
 
 # :space_invader: PostCSS Obfuscator
 
-- :date:**05-05-2023** :pushpin:**Beta Version 1.5.0**
+- :date:**09-05-2023** :pushpin:**Beta Version 1.5.4**
 - :computer:<a href="https://github.com/n4j1Br4ch1D" target="_blank" title="NajibRachid: Agile full-stack developer">NajibRachid</a> :purple_circle:<a href="https://anmoonweb.com/?ref=postcss-obfuscator" target="_blank" title="ANMOON: Right talents at the right place ">ANMOON</a> :office: <a href="https://x-hub.io/?ref=anmoon-postcss-obfuscator" target="_blank" title="XHUB: For Developers By Developers">XHUB</a>
 
 PostCSS plugin that helps you protect your CSS code by obfuscating class names and ids. with advanced customizable configuration.

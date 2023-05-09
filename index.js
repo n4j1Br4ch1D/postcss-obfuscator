@@ -14,7 +14,7 @@ const {
 const path = require("path");
 
 const pluginName = "PostCSS Obfuscator";
-const pluginVersion = "V 1.5.0 Beta";
+const pluginVersion = "V 1.5.4 Beta";
 const pluginWebSite = "https://github.com/n4j1Br4ch1D/postcss-obfuscator";
 const pluginHead = `     __                    ${pluginName}                     __     
     (oo)                     ${pluginVersion}                        (xx)    
