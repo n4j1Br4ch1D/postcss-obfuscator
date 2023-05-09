@@ -1,11 +1,11 @@
-<a href="#Intro" title="Section Intro">Intro</a>➤<a href="#Motivation" title="Section Motivation">Motivation</a>➤<a href="#Features" title="Section Features">Features</a>➤<a href="#Installation" title="Section Installation">Installation</a>➤<a href="#Usage" title="Section Usage">Usage</a>➤<a href="#Configuration" title="Section Configuration">Configuration</a>➤<a href="#FAQ" title="Section FAQ">FAQ</a>➤<a href="#Releases" title="Section Releases">Releases</a>➤<a href="#Contributing" title="Section Contributing">Contributing</a>➤<a href="#License" title="Section License">License</a>➤<a href="**Check Also:**" title="Section Check Also">Check Also</a>
+<p style="font-size:14px"><a href="#Intro" title="Section Intro">Intro</a>➤<a href="#Motivation" title="Section Motivation">Motivation</a>➤<a href="#Features" title="Section Features">Features</a>➤<a href="#Installation" title="Section Installation">Installation</a>➤<a href="#Usage" title="Section Usage">Usage</a>➤<a href="#Configuration" title="Section Configuration">Configuration</a>➤<a href="#FAQ" title="Section FAQ">FAQ</a>➤<a href="#Releases" title="Section Releases">Releases</a>➤<a href="#Contributing" title="Section Contributing">Contributing</a>➤<a href="#License" title="Section License">License</a>➤<a href="#Check Also:**" title="Section Check Also">Check Also</a></p>
 
 # :space_invader: PostCSS Obfuscator
 
 - :date:**05-05-2023** :pushpin:**Beta Version 1.5.0**
 - :computer:<a href="https://github.com/n4j1Br4ch1D" target="_blank" title="NajibRachid: Agile full-stack developer">NajibRachid</a> :purple_circle:<a href="https://anmoonweb.com/?ref=postcss-obfuscator" target="_blank" title="ANMOON: Right talents at the right place ">ANMOON</a> :office: <a href="https://x-hub.io/?ref=anmoon-postcss-obfuscator" target="_blank" title="XHUB: For Developers By Developers">XHUB</a>
 
-PostCSS plugin that helps you protect your CSS code by obfuscating class names and ids. with customizable configuration.
+PostCSS plugin that helps you protect your CSS code by obfuscating class names and ids. with advanced customizable configuration.
 
 This plugin provides obfuscation capabilities to your CSS files by replacing class and id selectors with prefixed, simplified or randomly generated strings. This can help to protect your CSS code from reverse engineering and unauthorized copying, while also reducing the file size of your CSS files. plugin offers advanced customizable configuration.
 
@@ -22,18 +22,18 @@ This plugin provides obfuscation capabilities to your CSS files by replacing cla
 
 ## Motivation
 
-- Protecting Intellectual Property, Licensing and Distribution: make it hard for others from stealing your design or using it without your permission.
+- Protecting intellectual property, licensing & distribution: make it hard for others from stealing your design or using it without your permission.
 - Protect against Web scraping, data mining or any malicious activities like stealing data or content: make it hard extracting data from websites automatically using software tools, which use class names & ids.
 - Minfiy Your code even more: obsfucation/uglify can slightly reduce file size and improve its performance.
 
 ## Features
 
-- [x] No 3rd parties, dependencies. Just vanilla Nodejs code.
+- [x] No 3rd parties, dependencies. just vanilla Nodejs code.
 - [x] Quicker then you think.
 - [x] Postcss plugin, hence its intended to work with any build tool or task runner.
 - [x] Advanced Customizable configuration (Control is yours).
-- [x] Supports all files: .html, .js, .php, .vue, ... you name it.
-- [x] Supports a wide range of CSS frameworks (Tailwidcss, bootstrap, Bulma, ...).
+- [x] Supports all files: .html, .js, .jsx, .vue, .php, ... you name it.
+- [x] Supports a wide range of CSS frameworks (Tailwidcss, Bootstrap, Bulma, ...).
 
 ## Installation
 
@@ -82,46 +82,46 @@ const defaultOptions = {
   idSuffix: "", // idName suffix.
   idIgnore: [], // Ids to ignore from obfuscation.
   indicator: null, // Indicator used to replace names.
-  jsonsPath: "css-obfuscator", // Path and Name where to save obfuscation data.
+  jsonsPath: "css-obfuscator", // Path and file name where to save obfuscation data.
   srcPath: "src", // Source of your files.
   desPath: "out", // Destination for obfuscated html/js/.. files.Be careful using the same directory as your src(you will lose your original files).
   extensions: [".html"], // Extesnion of files you want osbfucated ['.html', '.php', '.js', '.svelte'].
   htmlExcludes: [], // Files and paths to exclude from html obfuscation replacement.
   cssExcludes: [], // Files and paths to exclude from css obfuscation.
-  fresh: false, // Create New obfuscation data List or use AlreadyExistedOne (to keep Production Cache or prevent data scrapping).
+  fresh: false, // Create new obfuscation data list or use already existed one (to keep production cache or prevent data scrapping).
   multi: false, // Generate obsfucated data file for each css file.
-  differMulti: false, // Generate differnt Raandom names for each file.
+  differMulti: false, // Generate different Random names for each file.
   formatJson: false, // Format obfuscation data JSON file.
   showConfig: false, // Show config on terminal when runinng.
-  keepData: true, // Keep or delete Data after osbfucation is finished?
+  keepData: true, // Keep or delete Data after obfuscation is finished?
   callBack: function () {}, // Callback function to call after obfuscation is done.
 };
 ```
 
 - **`enable:`** Enable plugin, **default is true.**
 - **`length:`** Random name length for both ids and classes, **default is 5.**
-- **`classMethod:`** Obfuscation method for classes, options are: 'random', 'simple', 'none'. 'simple' will remove pronounced vowels and digits, 'none' will keep original name in case you want to just use prefixes or suffixes. **default is 'random'.**
+- **`classMethod:`** Obfuscation method for classes, options are: (`random`, `simple`, `none`). `simple` will remove pronounced vowels and digits, `none` will keep original name in case you want to just use prefixes or suffixes. **default is 'random'.**
 - **`classPrefix:`** Prefix for class names, **default is nothig.**
 - **`classSuffix:`** Suffix for class names, **default is nothig.**
 - **`classIgnore:`** Array of classes to ignore from obfuscation. **default is none.**
 - **`ids:`** Enable id Obfuscation, **default is false.**
-- **`idMethod:`** Obfuscation method for ids, options are: 'random', 'simple', 'none', \__default is 'random'._
+- **`idMethod:`** Obfuscation method for ids, options are also: (`random`, `simple`, `none`), __default is 'random'._
 - **`idPrefix:`** Prefix for id names, **default is nothig.**
 - **`idSuffix:`** Suffix for id names, **default is nothig.**
 - **`idIgnore:`** Array of ids to ignore from obfuscation. **default is none.**
 - **`indicator:`** Indicator used to replace names. **default is none.**
-- **`jsonsPath:`** Path and Name where to save obfuscation data **default is: css-obfuscator.**
+- **`jsonsPath:`** Path and file name where to save obfuscation data **default is: css-obfuscator.**
 - **`srcPath:`** Path for your source files, **default is: src.**
-- **`desPath:`** Destination Path for obfuscated html/js/.. files. Be careful using the same directory as your src(you will lose your original files). **default is: out**.
+- **`desPath:`** Destination path for obfuscated html/js/.. files. Be careful using the same directory as your src(you will lose your original files). **default is: out**.
 - **`extensions:`** Extesnions Array of files you want osbfucated ['.html', '.php', '.js', '.svelte'], **default is '.html'.**
 - **`htmlExcludes:`** Files and paths to exclude from html obfuscation replacement, **default is none.**
 - **`cssExcludes:`** Files and paths to exclude from css obfuscation, **default is none.**
-- **`fresh:`** Create New obfuscation data List or use already existed one (to keep Production Cache or prevent data scrapping). **default is false.**
+- **`fresh:`** Create new obfuscation data list or use already existed one (to keep production cache or prevent data scrapping). **default is false.**
 - **`multi:`** Generate obsfucated data file for each css file, **default is false.**
-- **`differMulti:`** Generate differnt Raandom names for each file, **default is false.**
+- **`differMulti:`** Generate different Random names for each file, **default is false.**
 - **`formatJson:`** Format obfuscation data JSON file, **default is false.**
 - **`showConfig:`** Show config on terminal when runinng, **default is false.**
-- **`keepData:`** Keep or delete Data after osbfucation is finished? **default is true.**
+- **`keepData:`** Keep or delete data after obfuscation is finished? **default is true.**
 - **`callBack:`** Callback function to call after obfuscation is done. **default is an empty function**
 
 ## npm scripts example
@@ -138,11 +138,11 @@ Then npm scripts can be something like this:
 
 ### How it works basically?
 
-1. Loop over all css files.
+1. Loop over all CSS files.
 2. Uses built-in function(regex) to find classes and ids.
-3. Saves Ids & classes in a Json file key represting orginal Names. then genarates random names as values.
-4. Creates new folder from source folder.
-5. Loops throw files and replaces those keys with values from JSON File.
+3. Saves Ids & classes in a JSON file key representing original Names. then generate random names as values.
+4. Creates a new folder from the source folder.
+5. Loops throw files and replace those keys with values from JSON files.
 
 ### Caveats?
 
@@ -154,12 +154,12 @@ Then npm scripts can be something like this:
 
 ### Destination folder?
 
-Its Better to keep your source files as they are for easy development. Consider specifing another folder for build, if you choose your build directory to be same as source directory you will be replaced and you will loose your orginal files.
+It's better to keep your source files as they are for easy development. Consider specifying another folder for the build, if you choose your build directory to be the same as the source directory you will be replaced and you will lose your original files.
 
 ### Use indicators?
 
-As mentioned this plugin uses Regex to replace all apperances of classes & ids on files with extension you specify (be it html, cs, js, ...).
-Generally if your classes names are unique and avoids reserved keywords, then you got nothing to worry about, otherwise, we got you covered just use the indicator option
+As mentioned this plugin uses Regex to replace all appearances of classes & ids on files with extensions you specify (be it html, cs, js, ...).
+Generally, if your classes names are unique and avoid reserved keywords, then you got nothing to worry about, otherwise, we got you covered just use the `indicator` option
 
 ```js
 indicator: "@",
@@ -176,8 +176,8 @@ Now whenever you mention your ids or classes use like this: so it will only repl
 
 ### Build Static and make production ready?
 
-Postcss usually is runned automatically on `dev` and `build`: so its preferred to create a customer postcss script with the postcss-obfuscator
-plugin, a script to run only when you want to obfuscate and to make project ready for production.
+Postcss usually is run automatically on `dev` and `build`: so it's preferred to create a customer postcss script with the postcss-obfuscator
+plugin, a script to run only when you want to obfuscate and make the project ready for production.
 
 ```js
 //postcss.config.js / postcss.config.cjs
@@ -200,7 +200,7 @@ postcss([
 
 But it can also be done like this:
 
-1. The `enable` option: to enable it only in specific mode and to make sure css works fine in dev mode for debuging:
+1. The `enable` option: to enable it only in specific mode and to make sure CSS works fine in dev mode for debugging:
 
 ```js
 // process.env.NODE_ENV = "development" //development //obfuscation //production
@@ -213,15 +213,15 @@ const isObfscMode = process.env.NODE_ENV === "obfuscation";
 
 ```js
  callBack: function () {
-	process.env.NODE_ENV = "production"; // to make sure postcss-obfuscator doesnt re-run.
+	process.env.NODE_ENV = "production"; // to make sure postcss-obfuscator doesn't re-run.
  },
 ```
 
-So basically you use `callBack` option to set the env mode back to `production` thus obsfucation will not run, and then config your app source folder to use `out` folder instead of `src` for production.
+So basically you use `callBack` option to set the env mode back to `production` thus obfuscation will not run, and then config your app source folder to use `out` folder instead of `src` for production.
 
 ### Support for CSS framworks?
 
-- It's designed to work with CSS, hence its supports any framework you can think of.
+It's designed to work with CSS, hence its supports any framework you can think of:
 - Tailwindcss.
 - Bootstrap.
 - Bulma.
@@ -247,7 +247,7 @@ So basically you use `callBack` option to set the env mode back to `production` 
     - Developing class finder function.
   - Initial Version 1.0.7 : 20/02/2023
     - Set confugration options.
-    - Introduce Id obsfucation.
+    - Introduce Id obfuscation.
     - Add prefixers option.
     - Add suffixes option.
   - Initial Version 1.0.9 : 21/02/2023
@@ -333,6 +333,7 @@ npm test
 
 This project is licensed under the MIT License. See the LICENSE file for more information. Feel free to use it in your own projects, or contribute to its development on GitHub.
 
-**Check Also:** <a href="https://github.com/n4j1Br4ch1D/postcss-prepend" target="_blank" title="postcss-prepend:prepends a comment to the top of your CSS files">PostCSS-prepend</a> | <a href="https://github.com/n4j1Br4ch1D/postcss-mobile-first" target="_blank" title="postcss-mobile-first:converts your desktop-first CSS code to mobile-first CSS code.">PostCSS-mobile-first</a>
+### Check Also
+<a href="https://github.com/n4j1Br4ch1D/postcss-prepend" target="_blank" title="postcss-prepend:prepends a comment to the top of your CSS files">PostCSS-prepend</a> | <a href="https://github.com/n4j1Br4ch1D/postcss-mobile-first" target="_blank" title="postcss-mobile-first:converts your desktop-first CSS code to mobile-first CSS code.">PostCSS-mobile-first</a>
 
 **keywords:** _postcss, plugin, obfuscation, css, css classes, class renamer, postcss-rename-selectors, class prefixer, Postcss obfuscator, PostCSS obfuscation plugin, CSS obfuscation, Class name scrambling, CSS security, Obfuscate CSS code, Protect CSS code, Prevent CSS reverse-engineering, tailwindcss, tailwindcss classes list, tailwindcss classes array json, bootstrap, bootstrap classes array json, Scramble HTML classes, CSS anti-theft protection, code privacy, CSS code obfuscator, CSS class name encryption, anti web scraping, Anti-scraping tools, Anti-scraping technology, Web scraping prevention, Web crawling protection._
