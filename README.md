@@ -1,6 +1,6 @@
-<sub><sup>
+<sub>
 <a href="#Intro" title="Section Intro" style="font-size:smaller;">Intro</a>➤<a href="#Motivation" title="Section Motivation">Motivation</a>➤<a href="#Features" title="Section Features">Features</a>➤<a href="#Installation" title="Section Installation">Installation</a>➤<a href="#Usage" title="Section Usage">Usage</a>➤<a href="#Configuration" title="Section Configuration">Configuration</a>➤<a href="#FAQ" title="Section FAQ">FAQ</a>➤<a href="#Releases" title="Section Releases">Releases</a>➤<a href="#Contributing" title="Section Contributing">Contributing</a>➤<a href="#License" title="Section License">License</a>➤<a href="#Check-Also" title="Section Check Also">Check Also</a>
-</sup></sub>
+</sub>
 # :space_invader: PostCSS Obfuscator
 
 - :date:**05-05-2023** :pushpin:**Beta Version 1.5.0**
