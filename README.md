@@ -13,11 +13,11 @@ This plugin provides obfuscation capabilities to your CSS files by replacing cla
 
 <div style="display:flex">
 <img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/postcss-obfuscator.png" alt="postcss obfuscator cli" height="300" width="400">
-<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/json-obsfuscation.png" alt="json Obfuscation" height="300" width="400"/>
-<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/css-obsfuscation.png" alt="css Obfuscation" height="300" width="400"/>
-<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/html-obsfuscation.png" alt="html Obfuscation" height="300" width="400"/>
-<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/react-obsfuscation.png" alt="react Obfuscation" height="300" width="400"/>
-<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/js-obsfuscation.png" alt="js Obfuscation" height="300" width="400"/>
+<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/json-obfuscation.png" alt="json Obfuscation" height="300" width="400"/>
+<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/css-obfuscation.png" alt="css Obfuscation" height="300" width="400"/>
+<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/html-obfuscation.png" alt="html Obfuscation" height="300" width="400"/>
+<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/react-obfuscation.png" alt="react Obfuscation" height="300" width="400"/>
+<img src="https://raw.githubusercontent.com/n4j1Br4ch1D/postcss-obfuscator/main/assets/js-obfuscation.png" alt="js Obfuscation" height="300" width="400"/>
 </div>
 
 ---
