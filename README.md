@@ -309,7 +309,14 @@ group
     - Better Documentation(build & production).
     - Fine tuning for tailwindcss (#3 Using tailwindcss arbitrary values).
     - Typo folder name css-obfuscator.
+  - Beta Version 1.5.4 : 09/05/2023
+    - Better Documentation (Simplified).
+    - Fine tuning for tailwindcss (#3 arbitrary values HTML replacment).
+    - Fix #5 prefixes & suffixes, trailing slashes.
+    - Fix #6 tailwind's escaped backslash issue
   - [Agenda] Beta Version 1.x.x : xx/xx/2023
+    - Use Case (gulp-postcss).
+    - Draft for orderJson option.
     - Draft for framework option.
     - Set Indicators Start & End.
     - Fix Files Path (make relative).
