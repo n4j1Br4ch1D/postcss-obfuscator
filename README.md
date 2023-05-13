@@ -323,11 +323,12 @@ group
     - Fix #5 prefixes & suffixes, trailing slashes.
     - Fix #6 tailwind's escaped backslash issue
   - [Agenda] Beta Version 1.x.x : xx/xx/2023
-    - Fix #9 update regex match exact wording.
-    - Fix unescaped indecator.
     - More Use Cases.
+    - Better flexible & safer Regex.
+    - Fix #9 update regex match exact wording.
+    - Fix #10 obfuscation only works for indicators.
     - Set Indicators Start & End.
-    - Add beforeRun option.
+    - Add beforeRun event hook option.
     - Draft for orderJson option.
     - Discard draft: Force option (case: dev env or same Path).
     - Draft for framework option.
