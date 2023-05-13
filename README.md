@@ -322,7 +322,7 @@ group
     - Set Indicators Start & End.
     - Add orderJson option.
     - Add beforeRun option.
-    - discard draft: Force option (case: dev env or same Path).
+    - Discard draft: Force option (case: dev env or same Path).
     - Draft for framework option.
     - Fix Files Path (make relative).
     - Add Force option (case: dev env or same Path).
