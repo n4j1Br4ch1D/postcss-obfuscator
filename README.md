@@ -230,7 +230,7 @@ It's designed to work with CSS, hence its supports any framework you can think o
 - ... .
 
 ### How To Use With?
-You are struggling to add it to your stack environment. please create an Issue. We will be happy to help.
+You are struggling to add it to your tooling & stack environment. please create an Issue. We will be happy to help.
 
 #### HTML/CSS: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/8" title="postcss-obfuscator HTML & CSS">Issue :link:</a> | <a href="https://replit.com/@n4j1Br4ch1D/postcss-obsfucator-php-and-tailwindcss" title="postcss-obfuscator HTML & CSS">Replit :link:</a>
 #### PHP+Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/8" title="postcss-obfuscator Php & Tailwindcss">Issue :link:</a> | <a href="https://replit.com/@n4j1Br4ch1D/postcss-obsfucator-php-and-tailwindcss" title="postcss-obfuscator Php & Tailwindcss">Replit :link:</a>
