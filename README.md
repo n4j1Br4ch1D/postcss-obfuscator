@@ -317,7 +317,7 @@ group
     - Fix #5 prefixes & suffixes, trailing slashes.
     - Fix #6 tailwind's escaped backslash issue
   - [Agenda] Beta Version 1.x.x : xx/xx/2023
-    - Fix #9 update regex match exact wording
+    - Fix #9 update regex match exact wording.
     - More Use Cases.
     - Set Indicators Start & End.
     - Add orderJson option.
