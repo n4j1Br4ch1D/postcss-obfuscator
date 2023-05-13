@@ -30,6 +30,7 @@ const options = {
   formatJson: true, // Format obfuscation data JSON file.
   showConfig: false, // Show config on terminal when runinng
   keepData: true,  // Keep or delete Data after obfuscation is finished?
+  // preRun: () => Promise.resolve(), // do something before the plugin runs.
   // callBack: function () {console.log("Call Me back! ;)");} // Callback function to call after obfuscation is done.
 };
 

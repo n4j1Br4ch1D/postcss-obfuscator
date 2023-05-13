@@ -97,6 +97,7 @@ const defaultOptions = {
   formatJson: false, // Format obfuscation data JSON file.
   showConfig: false, // Show config on terminal when runinng.
   keepData: true, // Keep or delete Data after obfuscation is finished?
+  preRun: () => Promise.resolve(), // do something before the plugin runs.
   callBack: function () {}, // Callback function to call after obfuscation is done.
 };
 ```
@@ -127,7 +128,8 @@ const defaultOptions = {
 - **`formatJson:`** Format obfuscation data JSON file, **default is false.**
 - **`showConfig:`** Show config on terminal when runinng, **default is false.**
 - **`keepData:`** Keep or delete data after obfuscation is finished? **default is true.**
-- **`callBack:`** Callback function to call after obfuscation is done. **default is an empty function**
+- **`preRun:`** Do something before the plugin runs. **default is a promise that immediately resolves.**
+- **`callBack:`** Callback function to call after obfuscation is done. **default is an empty function.**
 
 ## npm scripts example
 
@@ -161,6 +163,13 @@ Then npm scripts can be something like this:
 
 It's better to keep your source files as they are for easy development. Consider specifying another folder for the build, if you choose your build directory to be the same as the source directory you will be replaced and you will lose your original files.
 
+### Support for CSS framworks?
+
+It's designed to work with CSS, hence its supports any framework you can think of:
+- Tailwindcss.
+- Bootstrap.
+- Bulma.
+- ... .
 ### Use indicators?
 
 As mentioned this plugin uses Regex to replace all appearances of classes & ids on files with extensions you specify (be it html, cs, js, ...).
@@ -227,14 +236,20 @@ const isObfscMode = process.env.NODE_ENV === "obfuscation";
 
 So basically you use `callBack` option to set the env mode back to `production` thus obfuscation will not run, and then config your app source folder to use `out` folder instead of `src` for production.
 
-### Support for CSS framworks?
+### Run plugin after some tasks are finished?
 
-It's designed to work with CSS, hence its supports any framework you can think of:
-- Tailwindcss.
-- Bootstrap.
-- Bulma.
-- ... .
-
+You can use the `preRun` event hook option to delay the plugin until a certain task is finished or to perform some operation before the plugin runs. This option provides greater control over the timing of the plugin's execution and allows you to ensure that any necessary pre-processing or post-processing is completed before or after the plugin runs.
+```js
+preRun: () => new Promise(resolve => setTimeout(resolve, 10000)), // delay for  10s.
+```
+```js
+preRun: () => {
+  return new Promise(resolve => {
+    // some pre-tasks
+    resolve();
+  });
+}
+```
 ### How To Use With?
 Are you struggling to use it with your tooling & stack environment? please create an Issue. We will be happy to help.
 
@@ -328,7 +343,7 @@ group
     - Fix #9 update regex match exact wording.
     - Fix #10 obfuscation only works for indicators.
     - Set Indicators Start & End.
-    - Add beforeRun event hook option.
+    - Add PreRun event hook option.
     - Draft for orderJson option.
     - Discard draft: Force option (case: dev env or same Path).
     - Draft for framework option.

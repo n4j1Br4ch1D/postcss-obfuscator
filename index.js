@@ -46,6 +46,7 @@ const defaultOptions = {
   formatJson: false, // Format obfuscation data JSON file.
   showConfig: false, // Show config on terminal when runinng.
   keepData: true, // Keep or delete Data after obfuscation is finished?
+  preRun: () => Promise.resolve(), // do something before the plugin runs.
   callBack: function () {}, // Callback function to call after obfuscation is done.
 };
 let data = {};
@@ -86,15 +87,17 @@ module.exports = (options = {}) => {
     formatJson,
     showConfig,
     keepData,
+    preRun,
     callBack,
   } = { ...defaultOptions, ...options };
   return {
     postcssPlugin: pluginName,
-    Once: (root, { result }) => {
+    Once: async (root, { result }) => {
       // Add the file path to the set of processed files
       if (!enable) {
         return;
       } else {
+        await preRun();
         if (processedFiles.size == 0) {
           console.log("\x1b[48;2;103;113;210m%s\x1b[0m", pluginHead);
           if (envMode === "dev" || envMode === "development") {
@@ -120,6 +123,7 @@ module.exports = (options = {}) => {
               ...options,
             });
           }
+          logger("info", pluginName, "PreRun:", "PreRun event hook finished.");
         }
         let cssFile = getRelativePath(result.opts.from);
         if (isFileOrInDirectory(cssExcludes, cssFile)) {
