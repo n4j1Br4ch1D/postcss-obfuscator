@@ -230,12 +230,15 @@ It's designed to work with CSS, hence its supports any framework you can think o
 - ... .
 
 ### How To Use With?
+You are struggling to add it to your stack environment. please create an Issue. We will be happy to help.
 
-#### HTML/CSS:
+#### HTML/CSS: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/8" title="postcss-obfuscator HTML & CSS">Issue :link:</a> | <a href="https://replit.com/@n4j1Br4ch1D/postcss-obsfucator-php-and-tailwindcss" title="postcss-obfuscator HTML & CSS">Replit :link:</a>
+#### PHP+Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/8" title="postcss-obfuscator Php & Tailwindcss">Issue :link:</a> | <a href="https://replit.com/@n4j1Br4ch1D/postcss-obsfucator-php-and-tailwindcss" title="postcss-obfuscator Php & Tailwindcss">Replit :link:</a>
+#### ASTRO+Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/1" title="postcss-obfuscator Astro & Tailwindcss">Issue :link:</a> | <a href="https://replit.com/@n4j1Br4ch1D/postcss-obfuscator-astro-tailwindcss" title="Replit Demo postcss-obfuscator Astro & Tailwindcss">Replit :link:</a>
+#### Vite+React+Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/2" title="postcss-obfuscator Vite, React & Tailwindcss">Issue :link:</a> | <a href="https://replit.com/@n4j1Br4ch1D/postcss-obfuscator-react-vite-tailwindcss" title="Replit Demo postcss-obfuscator Vite, React & Tailwindcss">Replit :link:</a>
+#### Laravel-Mix (outside Laravel) + Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/8" title="postcss-obfuscator Laravel-Mix (outside Laravel) & Tailwindcss">Issue :link:</a> | <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/8" title="Replit Demo Laravel-Mix (outside Laravel) & Tailwindcss">Replit :link:</a>
+#### Gulp-postcss + Tailwindcss:  <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/4" title="postcss-obfuscator Gulp-postcss & Tailwindcss">Issue :link:</a> | <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/4" title="Replit Demo postcss-obfuscator Gulp-postcss & Tailwindcss">Replit :link:</a>
 
-#### PHP/Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/1" title="postcss-obfuscator Php & Tailwindcss">PHP/Tailwindcss.</a>
-#### ASTRO/Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/1" title="postcss-obfuscator Astro & Tailwindcss">ASTRO/Tailwindcss.</a>
-#### React/Vite/Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/2" title="postcss-obfuscator Vite, React & Tailwindcss">React/Vite/Tailwindcss.</a>
 ## Releases
 
 ```txt
