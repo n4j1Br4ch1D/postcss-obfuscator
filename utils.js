@@ -103,9 +103,9 @@ function replaceJsonKeysInFiles(
         if (indicator) {
           regex = new RegExp(`${indicator}${keyUse}${indicator}`, "g"); // find using indicator
         } else {
-          regex = new RegExp(`(?<!<\/?)\\b(${keyUse})(?![./\\-_:,={aA-zZ}\\d])`, "g"); // avoid html tagnames & attributes also match exact wording
+          regex = new RegExp(`([\\s"'\\\`]|^)(${keyUse})(?=$|[\\s"'\\\`])`, 'g'); // match exact wording & avoid ` ' ""
         }
-        fileContent = fileContent.replace(regex, jsonData[key].slice(1).replace(/\\/g, ""));
+        fileContent = fileContent.replace(regex, `$1` + jsonData[key].slice(1).replace(/\\/g, "")); // capture preceding space
       });
       fs.writeFileSync(filePath, fileContent);
     }
