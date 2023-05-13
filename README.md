@@ -233,10 +233,9 @@ It's designed to work with CSS, hence its supports any framework you can think o
 
 #### HTML/CSS:
 
-#### ASTRO/Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/1" title="postcss-obfuscator">ASTRO/Tailwindcss.</a>
-
-#### React/Vite/Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/2" title="postcss-obfuscator">React/Vite/Tailwindcss.</a>
-
+#### PHP/Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/1" title="postcss-obfuscator Php & Tailwindcss">PHP/Tailwindcss.</a>
+#### ASTRO/Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/1" title="postcss-obfuscator Astro & Tailwindcss">ASTRO/Tailwindcss.</a>
+#### React/Vite/Tailwindcss: <a href="https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/2" title="postcss-obfuscator Vite, React & Tailwindcss">React/Vite/Tailwindcss.</a>
 ## Releases
 
 ```txt
