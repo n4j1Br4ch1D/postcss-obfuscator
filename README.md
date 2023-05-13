@@ -4,7 +4,7 @@
 
 # :space_invader: PostCSS Obfuscator
 
-- :date:**09-05-2023** :pushpin:**Beta Version 1.5.4**
+- :date:**13-05-2023** :pushpin:**Beta Version 1.6.0**
 - :computer:<a href="https://github.com/n4j1Br4ch1D" target="_blank" title="NajibRachid: Agile full-stack developer">NajibRachid</a> :purple_circle:<a href="https://anmoonweb.com/?ref=postcss-obfuscator" target="_blank" title="ANMOON: Right talents at the right place ">ANMOON</a> :office: <a href="https://x-hub.io/?ref=anmoon-postcss-obfuscator" target="_blank" title="XHUB: For Developers By Developers">XHUB</a>
 
 PostCSS plugin that helps you protect your CSS code by obfuscating class names and ids. with advanced customizable configuration.
@@ -337,13 +337,14 @@ group
     - Fine tuning for tailwindcss (#3 arbitrary values HTML replacment).
     - Fix #5 prefixes & suffixes, trailing slashes.
     - Fix #6 tailwind's escaped backslash issue
-  - [Agenda] Beta Version 1.x.x : xx/xx/2023
+  - Beta Version 1.6.0 : 13/05/2023
     - More Use Cases.
     - Better flexible & safer Regex.
     - Fix #9 update regex match exact wording.
     - Fix #10 obfuscation only works for indicators.
     - Set Indicators Start & End.
-    - Add PreRun event hook option.
+    - Add preRun event hook option.
+  - [Agenda] Beta Version 1.x.x : xx/xx/2023
     - Draft for orderJson option.
     - Discard draft: Force option (case: dev env or same Path).
     - Draft for framework option.
