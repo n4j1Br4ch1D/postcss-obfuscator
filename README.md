@@ -83,7 +83,8 @@ const defaultOptions = {
   idPrefix: "", // idName Prefix.
   idSuffix: "", // idName suffix.
   idIgnore: [], // Ids to ignore from obfuscation.
-  indicator: null, // Indicator used to replace names.
+  indicatorStart: null, // Identify ids & classes by the preceding string.
+  indicatorEnd: null, // Identify ids & classes by the following string.  
   jsonsPath: "css-obfuscator", // Path and file name where to save obfuscation data.
   srcPath: "src", // Source of your files.
   desPath: "out", // Destination for obfuscated html/js/.. files.Be careful using the same directory as your src(you will lose your original files).
@@ -112,6 +113,8 @@ const defaultOptions = {
 - **`idSuffix:`** Suffix for id names, **default is nothig.**
 - **`idIgnore:`** Array of ids to ignore from obfuscation. **default is none.**
 - **`indicator:`** Indicator used to replace names. **default is none.**
+- **`indicatorStart:`** Identify ids & classes by the preceding string. **default is none.**
+- **`indicatorEnd:`** Identify ids & classes by the following string. **default is none.**
 - **`jsonsPath:`** Path and file name where to save obfuscation data **default is: css-obfuscator.**
 - **`srcPath:`** Path for your source files, **default is: src.**
 - **`desPath:`** Destination path for obfuscated html/js/.. files. Be careful using the same directory as your src(you will lose your original files). **default is: out**.
@@ -161,19 +164,22 @@ It's better to keep your source files as they are for easy development. Consider
 ### Use indicators?
 
 As mentioned this plugin uses Regex to replace all appearances of classes & ids on files with extensions you specify (be it html, cs, js, ...).
-Generally, if your classes names are unique and avoid reserved keywords, then you got nothing to worry about, otherwise, we got you covered just use the `indicator` option
+Generally, if your class names are unique and avoid reserved keywords, then you got nothing to worry about, otherwise, we got you covered just use the `indicatorStart` & `indicatorEnd` options.
+
+For example `class`, `h1`, and `import` are examples of reserved keywords in (HTML, CSS, JS, PHP).
+so if you insist on breaking naming conventions and using them as id or class names: 
+Then you can use either or both indicator options like this:
 
 ```js
-indicator: "@",
+indicatorStart: "@",
+indicatorEnd: "#",
 ```
-
-Now whenever you mention your ids or classes use like this: so it will only replace ones with the indicator around them.
 
 ```html
 <script>
-  let anotherClass = "@anotherClass@";
+  let anotherClass = "@class";
 </script>
-<div class="@myClass@">MyClass</div>
+<div class="h1# @import#">MyClass</div>
 ```
 
 ### Build Static and make production ready?
@@ -318,10 +324,11 @@ group
     - Fix #6 tailwind's escaped backslash issue
   - [Agenda] Beta Version 1.x.x : xx/xx/2023
     - Fix #9 update regex match exact wording.
+    - Fix unescaped indecator.
     - More Use Cases.
     - Set Indicators Start & End.
-    - Add orderJson option.
     - Add beforeRun option.
+    - Draft for orderJson option.
     - Discard draft: Force option (case: dev env or same Path).
     - Draft for framework option.
     - Fix Files Path (make relative).

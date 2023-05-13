@@ -72,7 +72,8 @@ function replaceJsonKeysInFiles(
   htmlExtensions,
   htmlExclude,
   jsonDataPath,
-  indicator,
+  indicatorStart,
+  indicatorEnd,
   keepData
 ) {
   // Read and merge the JSON data
@@ -99,13 +100,17 @@ function replaceJsonKeysInFiles(
       let fileContent = fs.readFileSync(filePath, "utf-8");
       Object.keys(jsonData).forEach((key) => {
         let keyUse = escapeRegExp(key.slice(1).replace(/\\/g, ""));
-        let regex;
-        if (indicator) {
-          regex = new RegExp(`${indicator}${keyUse}${indicator}`, "g"); // find using indicator
-        } else {
-          regex = new RegExp(`([\\s"'\\\`]|^)(${keyUse})(?=$|[\\s"'\\\`])`, 'g'); // match exact wording & avoid ` ' ""
-        }
+        let regex;                         
+        regex = new RegExp(`([\\s"'\\\`]|^)(${keyUse})(?=$|[\\s"'\\\`])`, 'g'); // match exact wording & avoid ` ' ""
         fileContent = fileContent.replace(regex, `$1` + jsonData[key].slice(1).replace(/\\/g, "")); // capture preceding space
+        if (indicatorStart || indicatorEnd) {
+          regex = new RegExp(`([\\s"'\\\`]|^)(${indicatorStart ?? ''}${keyUse})(?=$|[\\s"'\\\`])`, 'g');
+          fileContent = fileContent.replace(regex, `$1` + jsonData[key].slice(1).replace(/\\/g, ""));
+          regex = new RegExp(`([\\s"'\\\`]|^)(${keyUse}${indicatorEnd ?? ''})(?=$|[\\s"'\\\`])`, 'g');
+          fileContent = fileContent.replace(regex, `$1` + jsonData[key].slice(1).replace(/\\/g, ""));
+          regex = new RegExp(`([\\s"'\\\`]|^)(${indicatorStart ?? ''}${keyUse}${indicatorEnd ?? ''})(?=$|[\\s"'\\\`])`, 'g');
+          fileContent = fileContent.replace(regex, `$1` + jsonData[key].slice(1).replace(/\\/g, ""));
+        }  
       });
       fs.writeFileSync(filePath, fileContent);
     }

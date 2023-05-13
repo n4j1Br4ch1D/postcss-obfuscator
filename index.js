@@ -32,7 +32,8 @@ const defaultOptions = {
   idPrefix: "", // idName Prefix.
   idSuffix: "", // idName suffix.
   idIgnore: [], // Ids to ignore from obfuscation.
-  indicator: null, // Indicator used to replace names.
+  indicatorStart: null, // Identify ids & classes by the preceding string.
+  indicatorEnd: null, // Identify ids & classes by the following string.
   jsonsPath: "css-obfuscator", // Path and file name where to save obfuscation data.
   srcPath: "src", // Source of your files.
   desPath: "out", // Destination for obfuscated html/js/.. files. Be careful using the same directory as your src(you will lose your original files).
@@ -71,7 +72,8 @@ module.exports = (options = {}) => {
     idPrefix,
     idSuffix,
     idIgnore,
-    indicator,
+    indicatorStart,
+    indicatorEnd,
     jsonsPath,
     srcPath,
     desPath,
@@ -227,7 +229,8 @@ module.exports = (options = {}) => {
                 extensions,
                 htmlExcludes,
                 jsonsPath,
-                indicator,
+                indicatorStart,
+                indicatorEnd,
                 keepData
               );
               logger(
