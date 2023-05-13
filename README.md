@@ -317,10 +317,13 @@ group
     - Fix #5 prefixes & suffixes, trailing slashes.
     - Fix #6 tailwind's escaped backslash issue
   - [Agenda] Beta Version 1.x.x : xx/xx/2023
-    - Use Case (gulp-postcss).
-    - Draft for orderJson option.
-    - Draft for framework option.
+    - Fix #9 update regex match exact wording
+    - More Use Cases.
     - Set Indicators Start & End.
+    - Add orderJson option.
+    - Add beforeRun option.
+    - discard draft: Force option (case: dev env or same Path).
+    - Draft for framework option.
     - Fix Files Path (make relative).
     - Add Force option (case: dev env or same Path).
     - Ask before preceding (If dev env or srcPath is desPath).
