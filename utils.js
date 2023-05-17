@@ -195,7 +195,7 @@ function getClassNames(selectorStr) {
     .replace("::", " ")
     .replace(/\([^\)]*\)/g, "") // Remove string between starts with ( end with )
     .replace(/(?<!-)\\\[[^\\\]]*\\\]/g, "")  // remove string starts with [ no(-[ "fix tailwindcss arbitrary values") end with ] as css [attribute*=value] Selector
-    .replace(/\[\bdata-[^\]]*=[^\]]*\]/, "") // Removes [data-*] attribute selectors
+    .replace(/\[\bdata-[^\]]*\]/, "") // Removes [data-*] attribute selectors
     .split(".")
     .slice(1);
 
