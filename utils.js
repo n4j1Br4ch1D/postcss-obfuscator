@@ -194,6 +194,7 @@ function getClassNames(selectorStr) {
     .replace(/\.(?=[0-9-])/g, escpdSlctrPlchldr) // Match escaped dot
     .replace("::", " ")
     .replace(/\([^\)]*\)/g, "") // Remove string between starts with ( end with )
+    .replace( /(?<!\\)\([^)]*\)/g, "") // Remove string between starts with ( not'\(' end with ) not -- issue #13
     .replace(/(?<!-\\)\[[^\]]*=[^\]]*]/g, "")  // Only removes  CSS [attribute*=value] selectors when the `[` is not preceded by `-\`. thus it avoids tailwind`s arbitrary values, & data attributes
     .split(".")
     .slice(1);
