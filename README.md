@@ -345,6 +345,12 @@ group
     - Set Indicators Start & End.
     - Add preRun event hook option.
   - [Agenda] Beta Version 1.x.x : xx/xx/2023
+    - Fix #11 tailwindcss data attributes: PR #12.
+    - Fix #13 tailwindcss Advanced Classes: 1-parentheses removed.
+    - Fix #14 tailwindcss Advanced Classes: 1-classes used as arbitrary values.
+    - Draft new obfuscation method: 'count'.
+    - Draft new option: reservedClasses
+    - Draft new feature: test(Reverse engineering).
     - Draft for orderJson option.
     - Discard draft: Force option (case: dev env or same Path).
     - Draft for framework option.
