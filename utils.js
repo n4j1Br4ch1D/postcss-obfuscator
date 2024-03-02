@@ -258,6 +258,29 @@ function escapeClassName(className) {
   return className.split('').map(char => escapes[char] || char).join('');
 }
 
+function octalizeClassName(className) {
+  // Escape the first character if it's a digit or a special character
+  let firstCharEscaped = '';
+  if (/[\d>]/.test(className.charAt(0))) {
+      const firstChar = className.charCodeAt(0).toString(16).toLowerCase();
+      firstCharEscaped = `\\${firstChar}`;
+  }
+
+  // Escape other special characters in the rest of the className
+  const restEscaped = className.slice(firstCharEscaped ? 1 : 0)
+      .split('')
+      .map(char => {
+          if (/[!\"#$%&'()*+,./:;<=>?@[\\\]^`{|}~]/.test(char)) {
+              // Directly escape special characters
+              return `\\${char}`;
+          }
+          return char;
+      })
+      .join('');
+
+  return firstCharEscaped + restEscaped;
+}
+
 function getClassNames(selectorStr) {
   const parse = createParser({syntax: 'progressive'});
   const ast = parse(selectorStr);
@@ -344,4 +367,5 @@ module.exports = {
   getRelativePath,
   isFileOrInDirectory,
   escapeClassName,
+  octalizeClassName,
 };

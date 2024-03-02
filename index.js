@@ -10,7 +10,8 @@ const {
   logger,
   getRelativePath,
   isFileOrInDirectory,
-  escapeClassName
+  escapeClassName,
+  octalizeClassName,
 } = require("./utils");
 const path = require("path");
 
@@ -174,14 +175,24 @@ module.exports = (options = {}) => {
               }
               newClassName = `.${classPrefix}${newClassName}${classSuffix}`;
               validCssClassName = '.'+escapeClassName(oldClassName.slice(1));
+              //cond
+              octalValidCssClassName = '.'+octalizeClassName(oldClassName.slice(1));
               // If ClassName already exist replace with its value else generate new : the should have same name.
+              console.log("validCssClassName:", validCssClassName);
               if (jsonData.hasOwnProperty(oldClassName)) {
                 selector = selector.replace(
                   validCssClassName,
                   jsonData[oldClassName]
                 );
+                //cond
+                selector = selector.replace(
+                  octalValidCssClassName,
+                  jsonData[oldClassName]
+                );
               } else {
                 selector = selector.replace(validCssClassName, newClassName);
+                //cond
+                selector = selector.replace(octalValidCssClassName, newClassName);
                 jsonData[oldClassName] = newClassName;
               }
               singleFileData[oldClassName] = newClassName;
