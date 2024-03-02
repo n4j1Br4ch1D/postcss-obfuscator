@@ -186,6 +186,28 @@ function getFileCount(directoryPath, extensions, excludePathsOrFiles = []) {
   return count;
 }
 
+function extractClassNames(obj) {
+  const classNames = new Set();
+  function traverse(node) {
+    if (node.type === "ClassName") {
+      classNames.add(node.name);
+    }
+    for (const key of Object.keys(node)) {
+      const value = node[key];
+      if (typeof value === "object" && value !== null) {
+        if (Array.isArray(value)) {
+          value.forEach(traverse);
+        } else {
+          traverse(value);
+        }
+      }
+    }
+  }
+
+  traverse(obj);
+  return classNames;
+}
+
 function getClassNames(selectorStr) {
   const parse = createParser({syntax: 'progressive'});
   const ast = parse(selectorStr);
