@@ -289,6 +289,10 @@ function getClassNames(selectorStr) {
     return new Set(); // Return an empty set for ignored cases
   }
   
+  // https://github.com/mdevils/css-selector-parser/issues/41
+  // Remove '&' used for nesting in CSS, if present
+  selectorStr = selectorStr.replace(/(^|\s+)&/g, '');
+  
   const parse = createParser({syntax: 'progressive'});
   const ast = parse(selectorStr);
   return extractClassNames(ast);
