@@ -282,6 +282,13 @@ function octalizeClassName(className) {
 }
 
 function getClassNames(selectorStr) {
+  // https://github.com/mdevils/css-selector-parser/issues/40
+  // Avoid keyframe selectors: @keyframes, from, to, 0%, 100%. 50%
+  const keyframeOrAtRuleRegex = /^(?:@|\d+|from|to)\b/;
+  if (keyframeOrAtRuleRegex.test(selectorStr)) {
+    return new Set(); // Return an empty set for ignored cases
+  }
+  
   const parse = createParser({syntax: 'progressive'});
   const ast = parse(selectorStr);
   return extractClassNames(ast);
