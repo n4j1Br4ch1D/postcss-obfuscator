@@ -29,6 +29,8 @@ const matchList = {
   ".first .second": ["first", "second"],
   ".first:hover": ["first"],
   ".first::before": ["first"],
+  "article": [], // semantic tags.
+  "unknowntag": [],
 
   // Advanced Selectors
   ".first > .second#sdsa": ["first", "second"],
@@ -44,12 +46,13 @@ const matchList = {
     "test",
   ],
   "@keyframes spin": [], // Keyframes
-  from: [],
-  to: [],
+  "from": [],
+  "to": [],
   "0%, 100%": [],
   "50%": [],
   "& .childclass": ["childclass"], // Native CSS & Nasting
   "&:hover": [],
+  '.two[class*="test"]': ['two'], // "contains" selector
 
   // Bootsrap Selectors
   ".form-range:disabled::-moz-range-thumb": ["form-range"],
@@ -114,6 +117,7 @@ const matchList = {
   ".md\\:text-3xl": ["md:text-3xl"],
   ".dark .dark\\:bg-gray-800\\/50": ["dark", "dark:bg-gray-800/50"],
   ".py-0\\.5": ["py-0.5"],
+  ".w-\\[1\\.5rem\\]": ['w-[1.5rem]'],
   ".\\[\\&_a\\]\\:will-change-\\[padding-left\\2c _color\\] a": [
     "[&_a]:will-change-[padding-left,_color]",
   ],
@@ -121,6 +125,11 @@ const matchList = {
     [
       "[&_a]:[transition:padding-left_cubic-bezier(.15,1.6,.75,1)_300ms,color_ease_300ms]",
     ],
+  // <div class="[&>{sth}]:bg-green-50">lol</div>
+  // <div class="[&_{sth}]:bg-green-50">lol</div>
+  // <div class="[&_.{className}]:bg-green-50">lol</div>
+  // <div class="[&_#{id}]:bg-green-50">lol</div>
+  // <div class="[&_a]:[transition:padding-left_cubic-bezier(.15,1.6,.75,1)_300ms,color_ease_300ms] [&_a]:will-change-[padding-left,_color]">
   ".-translate-x-1\\/2": ["-translate-x-1/2"], //negative
   ".\\32xl\\:grid-cols-3": ["2xl:grid-cols-3"], //octal
   ".\\3exl\\:p-8": [">xl:p-8"],
@@ -163,15 +172,6 @@ const matchList = {
     "[@supports(backdrop-filter:blur(0))]:bg-white/50",
   ],
   ".\\*\\:pt-4 > *": ["*:pt-4"], //global
-  // <div class="[&>{sth}]:bg-green-50">lol</div>
-  // <div class="[&_{sth}]:bg-green-50">lol</div>
-  // <div class="[&_.{className}]:bg-green-50">lol</div>
-  // <div class="[&_#{id}]:bg-green-50">lol</div>
-  // <div class="[&_a]:[transition:padding-left_cubic-bezier(.15,1.6,.75,1)_300ms,color_ease_300ms] [&_a]:will-change-[padding-left,_color]">
-  // '.one.h-[0.5rem].two[class*="test"]': [],
-  // // const jsonString = '.s-w-0\\.5chat-e';
-  // '.s-w-\\[1\\.5rem\\]chat-e';
-  // const jsonString = '.s-group-\\[\\.is-published\\.play\\]\\:block-e';
 };
 
 Object.entries(matchList).forEach(([selector, classes]) =>
