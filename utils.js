@@ -208,13 +208,62 @@ function extractClassNames(obj) {
   return classNames;
 }
 
+function escapeClassName(className) {
+  // CSS escapes for some special characters
+  const escapes = {
+    '!': '\\!',
+    '"': '\\"',
+    '#': '\\#',
+    '$': '\\$',
+    '%': '\\%',
+    '&': '\\&',
+    '\'': '\\\'',
+    '(': '\\(',
+    ')': '\\)',
+    '*': '\\*',
+    '+': '\\+',
+    ',': '\\,',
+    '.': '\\.',
+    '/': '\\/',
+    ':': '\\:',
+    ';': '\\;',
+    '<': '\\<',
+    '=': '\\=',
+    '>': '\\>',
+    '?': '\\?',
+    '@': '\\@',
+    '[': '\\[',
+    '\\': '\\\\',
+    ']': '\\]',
+    '^': '\\^',
+    '`': '\\`',
+    '{': '\\{',
+    '|': '\\|',
+    '}': '\\}',
+    '~': '\\~',
+    ' ': '\\ ',
+  };
+
+  // Special handling for class names starting with a digit
+  if (/^\d/.test(className)) {
+    // Convert the first digit to its hexadecimal escape code
+    const firstCharCode = className.charCodeAt(0).toString(16);
+    const rest = className.slice(1);
+
+    // Use the hexadecimal escape for the first character, followed by the rest of the class name
+    // Note: A trailing space is added after the escape sequence to ensure separation
+   return `\\${firstCharCode}${rest.split('').map(char => escapes[char] || char).join('')}`;
+  }
+  // Replace each special character with its escaped version for the rest of the class name
+  return className.split('').map(char => escapes[char] || char).join('');
+}
+
 function getClassNames(selectorStr) {
   const parse = createParser({syntax: 'progressive'});
   const ast = parse(selectorStr);
   return extractClassNames(ast);
 }
   
-
 function getIdNames(selectorStr) {
   let ids = selectorStr.replace(".#", " ").replace(".", " ").trim().split(" ");
   ids = ids.filter((id) => id.charAt(0) == "#");
@@ -294,4 +343,5 @@ module.exports = {
   logger,
   getRelativePath,
   isFileOrInDirectory,
+  escapeClassName,
 };
