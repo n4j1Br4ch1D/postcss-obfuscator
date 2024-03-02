@@ -9,10 +9,10 @@
 /coverage
 
 # production
-test/demo/build
-test/demo/out
-test/demo/css-obfuscator
-test/demo/src/css/output.css
+test/**/build
+test/**/out
+test/**/css-obfuscator
+test/**/src/css/output.css
 
 # misc
 .DS_Store
