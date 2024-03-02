@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const readline = require("readline");
+const {createParser} = require('css-selector-parser');
 
 const pluginName = "PostCSS Obfuscator";
 
@@ -186,38 +187,11 @@ function getFileCount(directoryPath, extensions, excludePathsOrFiles = []) {
 }
 
 function getClassNames(selectorStr) {
-  const classes = new Set();
-  const escpdSlctrPlchldr = "ESCAPED_SELECTOR_PLACEHOLDER";
-  const psudoClasses = [":-moz-broken",":-moz-drag-over",":-moz-first-node",":-moz-focusring",":-moz-handler-blocked",":-moz-handler-crashed",":-moz-handler-disabled",":-moz-last-node",":-moz-loading",":-moz-locale-dir",":-moz-locale-dir",":-moz-only-whitespace",":-moz-submit-invalid",":-moz-suppressed",":-moz-user-disabled",":-moz-window-inactive",":active",":any-link",":autofill",":blankExperimental",":checked",":current",":default",":defined",":dir",":disabled",":empty",":enabled",":first",":first-child",":first-of-type",":focus",":focus-visible",":focus-within",":fullscreen",":futureExperimental",":has",":host",":host-context",":host",":hover",":in-range",":indeterminate",":invalid",":is",":lang",":last-child",":last-of-type",":left",":link",":local-link",":modal",":not",":nth-child",":nth-col",":nth-last-child",":nth-last-col",":nth-last-of-type",":nth-of-type",":only-child",":only-of-type",":optional",":out-of-range",":pastExperimental",":paused",":picture-in-picture",":placeholder-shown",":playing",":read-only",":read-write",":required",":right",":root",":scope",":target",":target-withinExperimental",":user-invalid",":-moz-ui-invalid",":user-valid",":-moz-ui-valid",":valid",":visited",":where"];
-
-  const tempClasses = selectorStr
-    .replace(/\.(?=[0-9-])/g, escpdSlctrPlchldr) // Match escaped dot
-    .replace("::", " ")
-    .replace( /(?<!\\)\([^)]*\)/g, "") // Remove string between starts with ( not'\(' end with ) not -- issue #13
-    .replace(/(?<!-\\)\[[^\]]*=[^\]]*]/g, "")  // Only removes  CSS [attribute*=value] selectors when the `[` is not preceded by `-\`. thus it avoids tailwind`s arbitrary values, & data attributes
-    .split(".")
-    .slice(1);
-
-  tempClasses.forEach((tempClass) => {
-    let theClass = tempClass
-      .trim()
-      .split(" ")[0]
-      .replace(escpdSlctrPlchldr, "\.")
-      .replace(".#", ".\\#")
-      .replace("-.", ".\\-");
-    let lastColonIndex = theClass.lastIndexOf(':');
-    if (lastColonIndex !== -1) {
-      let lastString = theClass.substring(lastColonIndex + 1);
-      if (psudoClasses.includes(":"+lastString)) {
-        theClass = theClass.substring(0, lastColonIndex);
-        theClass = theClass.replace(/\\$/, "");
-      }
-    }
-    classes.add(theClass);
-  });
-
-  return classes;
+  const parse = createParser({syntax: 'progressive'});
+  const ast = parse(selectorStr);
+  return extractClassNames(ast);
 }
+  
 
 function getIdNames(selectorStr) {
   let ids = selectorStr.replace(".#", " ").replace(".", " ").trim().split(" ");
