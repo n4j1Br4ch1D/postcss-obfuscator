@@ -1,3 +1,86 @@
+<table><tr><td>
+
+👋 Hello everyone,
+
+I've recently started working on Version 2 of postcss-obfuscator 🚀.
+
+First and foremost, I must apologize 🙏 for my absence. I've been incredibly busy due to some life complications 😔.
+
+The upcoming update aims to enhance the plugin and address all outstanding issues 📌.
+
+I will also revisit previously closed inquiries that received unsatisfactory responses 😀.
+
+Being absent has, in a way, been beneficial, as it allowed me to gather more insights about its usage, bugs, etc 🔭.
+
+A huge thank you to <a href="https://github.com/soranoo">@soranoo</a>, <a href="https://github.com/hoangnhan2ka3">@hoangnhan2ka3</a>, and all the others for their excellent work on <a href="https://github.com/soranoo/next-css-obfuscator">next-css-obfuscator</a> 👏.
+
+I manage this project during my limited time over the weekends ⏳.
+
+Therefore, I am seeking sponsorship 🤝 to support my efforts in making this plugin stable🛡️.
+
+&nbsp;&nbsp;&nbsp;[![Sponsor Me](https://img.shields.io/static/v1?label=Sponsor-Me&message=❤️&style=social)](https://www.paypal.com/paypalme/NajibRachid01)
+
+<details>
+ <summary>Here is the current agenda 📅: Click me</summary>
+	
+```
+## Goals:
+   - [ ] Resolve all open issues & closed unsatsfied Isssues.
+   - [ ] No breaking changes.
+   - [ ] Test With Many Stack as possible.
+   - [ ] Better Experince & Features.
+## HotFix:
+   - [ ] Advanced CSS Parser. issues: #3, #5, #6, #11, #12, #13, #14, #18, https://github.com/soranoo/next-css-obfuscator/issues/9, https://github.com/soranoo/next-css-obfuscator/issues/23
+   - [ ] Accurate Replacer. issues: #9, #10, #20, #24 #octal , https://github.com/soranoo/next-css-obfuscator/issues/4, https://github.com/soranoo/next-css-obfuscator/issues/25, https://github.com/soranoo/next-css-obfuscator/issues/24
+   - [ ] Fix, Improve Stacks:
+        - [ ] Use with Astro + Tailwind ? #1
+        - [ ] Use with Vite + React + Tailwind ? #2 #22
+        - [ ] Use with Gulp-postcss ? #4
+        - [ ] Use with Laravel-Mix (outside Laravel) ? #8
+        - [ ] How to use with Next.js? #15
+        - [ ] Use with Nuxt2/Nuxt3 ? #16
+        - [ ] Use with SvelteKit + Tailwind? #17 #21
+        - [ ] Need Help Integrating with Techstack: Laravel, InertiaJS (SSR), and React #23
+## Bugs: 
+   - [ ] Duplicated randoms!.
+   - [ ] Accurate classes Count.
+   - [ ] Fresh option breaking.
+   - [ ] Skip prefix/suffix for ignored classes
+## Features
+   - [ ] Compare size before & after.
+   - [ ] Advanced Tailwindcss Classes.
+   - [ ] Support js variables: bg-[url(${card.img})]
+   - [ ] ClassIgnore to support regular expression(antdesign): #19
+   - [ ] New option shorten(https://github.com/n4j1Br4ch1D/postcss-obfuscator/issues/1#issuecomment-1656538410).
+   - [ ] New classMethod: "escaped"
+   - [ ] New classMethod: 'count'.
+   - [ ] Testing feature.
+   - [ ] Multi srcPath.
+   - [ ] Multi desPath.
+   - [ ] Draft for orderJson option.
+   - [ ] Internal Css support.
+   - [ ] Auto Obsfuctaion. setup to genarte classes every time a server is hit.
+   - [ ] CDN caches while deployment.
+## Tests:
+   - [ ] classFinder.
+   - [ ] cssReplacer.
+   - [ ] RandomsGenerator.
+   - [ ] RandomsReplacer.
+## Docs:
+   - [ ] Better Readme.
+   - [ ] Add Sponsors Table.
+   - [ ] Wiki usage cases: diffrent stacks, solutions and sourcecodes.
+   - [ ] Minimal config.
+```
+</details>
+Your demands, suggestions, and contributions are always welcome 😇.
+
+💻 Check progres on [dev branch](https://github.com/n4j1Br4ch1D/postcss-obfuscator/tree/dev).
+</td>
+<td>
+✉️
+</td>
+</tr></table>
 <sub>
 <a href="#Intro" title="Section Intro" style="font-size:smaller;">Intro</a>➤<a href="#Motivation" title="Section Motivation">Motivation</a>➤<a href="#Features" title="Section Features">Features</a>➤<a href="#Installation" title="Section Installation">Installation</a>➤<a href="#Usage" title="Section Usage">Usage</a>➤<a href="#Configuration" title="Section Configuration">Configuration</a>➤<a href="#FAQ" title="Section FAQ">FAQ</a>➤<a href="#Releases" title="Section Releases">Releases</a>➤<a href="#Contributing" title="Section Contributing">Contributing</a>➤<a href="#License" title="Section License">License</a>➤<a href="#Check-Also" title="Section Check Also">Check Also</a>
 </sub>
