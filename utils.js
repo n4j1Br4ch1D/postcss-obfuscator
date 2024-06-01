@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const readline = require("readline");
+const {createParser} = require('css-selector-parser');
 
 const pluginName = "PostCSS Obfuscator";
 
@@ -185,40 +186,118 @@ function getFileCount(directoryPath, extensions, excludePathsOrFiles = []) {
   return count;
 }
 
-function getClassNames(selectorStr) {
-  const classes = new Set();
-  const escpdSlctrPlchldr = "ESCAPED_SELECTOR_PLACEHOLDER";
-  const psudoClasses = [":-moz-broken",":-moz-drag-over",":-moz-first-node",":-moz-focusring",":-moz-handler-blocked",":-moz-handler-crashed",":-moz-handler-disabled",":-moz-last-node",":-moz-loading",":-moz-locale-dir",":-moz-locale-dir",":-moz-only-whitespace",":-moz-submit-invalid",":-moz-suppressed",":-moz-user-disabled",":-moz-window-inactive",":active",":any-link",":autofill",":blankExperimental",":checked",":current",":default",":defined",":dir",":disabled",":empty",":enabled",":first",":first-child",":first-of-type",":focus",":focus-visible",":focus-within",":fullscreen",":futureExperimental",":has",":host",":host-context",":host",":hover",":in-range",":indeterminate",":invalid",":is",":lang",":last-child",":last-of-type",":left",":link",":local-link",":modal",":not",":nth-child",":nth-col",":nth-last-child",":nth-last-col",":nth-last-of-type",":nth-of-type",":only-child",":only-of-type",":optional",":out-of-range",":pastExperimental",":paused",":picture-in-picture",":placeholder-shown",":playing",":read-only",":read-write",":required",":right",":root",":scope",":target",":target-withinExperimental",":user-invalid",":-moz-ui-invalid",":user-valid",":-moz-ui-valid",":valid",":visited",":where"];
-
-  const tempClasses = selectorStr
-    .replace(/\.(?=[0-9-])/g, escpdSlctrPlchldr) // Match escaped dot
-    .replace("::", " ")
-    .replace( /(?<!\\)\([^)]*\)/g, "") // Remove string between starts with ( not'\(' end with ) not -- issue #13
-    .replace(/(?<!-\\)\[[^\]]*=[^\]]*]/g, "")  // Only removes  CSS [attribute*=value] selectors when the `[` is not preceded by `-\`. thus it avoids tailwind`s arbitrary values, & data attributes
-    .split(".")
-    .slice(1);
-
-  tempClasses.forEach((tempClass) => {
-    let theClass = tempClass
-      .trim()
-      .split(" ")[0]
-      .replace(escpdSlctrPlchldr, "\.")
-      .replace(".#", ".\\#")
-      .replace("-.", ".\\-");
-    let lastColonIndex = theClass.lastIndexOf(':');
-    if (lastColonIndex !== -1) {
-      let lastString = theClass.substring(lastColonIndex + 1);
-      if (psudoClasses.includes(":"+lastString)) {
-        theClass = theClass.substring(0, lastColonIndex);
-        theClass = theClass.replace(/\\$/, "");
+function extractClassNames(obj) {
+  const classNames = new Set();
+  function traverse(node) {
+    if (node.type === "ClassName") {
+      classNames.add(node.name);
+    }
+    for (const key of Object.keys(node)) {
+      const value = node[key];
+      if (typeof value === "object" && value !== null) {
+        if (Array.isArray(value)) {
+          value.forEach(traverse);
+        } else {
+          traverse(value);
+        }
       }
     }
-    classes.add(theClass);
-  });
+  }
 
-  return classes;
+  traverse(obj);
+  return classNames;
 }
 
+function escapeClassName(className) {
+  // CSS escapes for some special characters
+  const escapes = {
+    '!': '\\!',
+    '"': '\\"',
+    '#': '\\#',
+    '$': '\\$',
+    '%': '\\%',
+    '&': '\\&',
+    '\'': '\\\'',
+    '(': '\\(',
+    ')': '\\)',
+    '*': '\\*',
+    '+': '\\+',
+    ',': '\\,',
+    '.': '\\.',
+    '/': '\\/',
+    ':': '\\:',
+    ';': '\\;',
+    '<': '\\<',
+    '=': '\\=',
+    '>': '\\>',
+    '?': '\\?',
+    '@': '\\@',
+    '[': '\\[',
+    '\\': '\\\\',
+    ']': '\\]',
+    '^': '\\^',
+    '`': '\\`',
+    '{': '\\{',
+    '|': '\\|',
+    '}': '\\}',
+    '~': '\\~',
+    ' ': '\\ ',
+  };
+
+  // Special handling for class names starting with a digit
+  if (/^\d/.test(className)) {
+    // Convert the first digit to its hexadecimal escape code
+    const firstCharCode = className.charCodeAt(0).toString(16);
+    const rest = className.slice(1);
+
+    // Use the hexadecimal escape for the first character, followed by the rest of the class name
+    // Note: A trailing space is added after the escape sequence to ensure separation
+   return `\\${firstCharCode}${rest.split('').map(char => escapes[char] || char).join('')}`;
+  }
+  // Replace each special character with its escaped version for the rest of the class name
+  return className.split('').map(char => escapes[char] || char).join('');
+}
+
+function octalizeClassName(className) {
+  // Escape the first character if it's a digit or a special character
+  let firstCharEscaped = '';
+  if (/[\d>]/.test(className.charAt(0))) {
+      const firstChar = className.charCodeAt(0).toString(16).toLowerCase();
+      firstCharEscaped = `\\${firstChar}`;
+  }
+
+  // Escape other special characters in the rest of the className
+  const restEscaped = className.slice(firstCharEscaped ? 1 : 0)
+      .split('')
+      .map(char => {
+          if (/[!\"#$%&'()*+,./:;<=>?@[\\\]^`{|}~]/.test(char)) {
+              // Directly escape special characters
+              return `\\${char}`;
+          }
+          return char;
+      })
+      .join('');
+
+  return firstCharEscaped + restEscaped;
+}
+
+function getClassNames(selectorStr) {
+  // https://github.com/mdevils/css-selector-parser/issues/40
+  // Avoid keyframe selectors: @keyframes, from, to, 0%, 100%. 50%
+  const keyframeOrAtRuleRegex = /^(?:@|\d+|from|to)\b/;
+  if (keyframeOrAtRuleRegex.test(selectorStr)) {
+    return new Set(); // Return an empty set for ignored cases
+  }
+  
+  // https://github.com/mdevils/css-selector-parser/issues/41
+  // Remove '&' used for nesting in CSS, if present
+  selectorStr = selectorStr.replace(/(^|\s+)&/g, '');
+  
+  const parse = createParser({syntax: 'progressive'});
+  const ast = parse(selectorStr);
+  return extractClassNames(ast);
+}
+  
 function getIdNames(selectorStr) {
   let ids = selectorStr.replace(".#", " ").replace(".", " ").trim().split(" ");
   ids = ids.filter((id) => id.charAt(0) == "#");
@@ -298,4 +377,6 @@ module.exports = {
   logger,
   getRelativePath,
   isFileOrInDirectory,
+  escapeClassName,
+  octalizeClassName,
 };
